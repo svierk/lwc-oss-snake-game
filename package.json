@@ -1,8 +1,13 @@
 {
   "name": "lwc-oss-snake-game",
-  "version": "0.0.1",
-  "license": "MIT",
   "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "author": {
+    "name": "Sebastiano Schwarz",
+    "url": "https://github.com/svierk"
+  },
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "clean": "rm -rf node_modules __lwr_cache__ site",
@@ -10,13 +15,33 @@
     "dev:compat": "lwr dev --mode compat",
     "build": "lwr build --clean",
     "build:prod-compat": "lwr build --clean --mode prod-compat",
+    "lint": "eslint **/src/**/*.js",
+    "lint:sonar": "eslint -f json -o eslint-report.json **/src/**/*.js",
+    "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\" --check",
+    "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+    "postinstall": "husky install",
+    "precommit": "lint-staged",
     "start": "lwr start",
     "stage": "yarn build && yarn start",
     "stage:prod-compat": "yarn build:prod-compat && yarn start"
   },
   "dependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/eslint-parser": "^7.21.8",
+    "@lwc/eslint-plugin-lwc": "^1.6.2",
+    "@salesforce/eslint-config-lwc": "^3.4.0",
+    "@salesforce/eslint-plugin-lightning": "^1.0.0",
+    "@salesforce/sfdx-lwc-jest": "^1.3.0",
+    "eslint": "^8.39.0",
+    "eslint-plugin-compat": "^4.1.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "lwc": "2.45.0",
-    "lwr": "0.9.4"
+    "lwr": "0.9.4",
+    "prettier": "^2.8.8",
+    "typescript": "~4.9.5"
   },
   "devDependencies": {
     "@salesforce-ux/design-system": "^2.20.1"
@@ -26,5 +51,13 @@
   },
   "volta": {
     "node": "16.19.1"
+  },
+  "lint-staged": {
+    "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
+      "prettier --write --check"
+    ],
+    "**/*.{css,html,js}": [
+      "eslint"
+    ]
   }
 }
