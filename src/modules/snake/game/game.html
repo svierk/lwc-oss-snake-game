@@ -8,22 +8,22 @@
   </div>
   <div class="game-container">
     <div class="game-play">
-      <template for:each="{gameBlocks}" for:item="block">
-        <div class="{block.class}" data-reference="{block.id}" key="{block.id}">&nbsp;</div>
+      <template for:each={gameBlocks} for:item="block">
+        <div class={block.class} data-reference={block.id} key={block.id}>&nbsp;</div>
       </template>
     </div>
-    <template if:true="{showOverlay}">
+    <template if:true={showOverlay}>
       <div class="overlay">
         <div class="overlay-content">
-          <template if:true="{gameOver}">
+          <template if:true={gameOver}>
             <div class="slds-text-heading_large">Game Over!</div>
             <br />
-            <button class="slds-button slds-button_brand" onclick="{resetGame}">Play Again</button>
+            <button class="slds-button slds-button_brand" onclick={resetGame}>Play Again</button>
           </template>
-          <template if:false="{gameOver}">
+          <template if:false={gameOver}>
             <div class="slds-text-heading_medium">Use Arrow Keys to move the snake</div>
             <br />
-            <button class="slds-button slds-button_brand" onclick="{startGame}">Start Game</button>
+            <button class="slds-button slds-button_brand" onclick={startGame}>Start Game</button>
           </template>
         </div>
       </div>

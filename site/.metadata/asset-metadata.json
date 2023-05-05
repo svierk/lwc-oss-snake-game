@@ -8,17 +8,13 @@
       "path": "/1/asset/immutable/s/16830589214527714/assets/styles/salesforce-lightning-design-system.css",
       "mimeType": "text/css"
     },
-    "/assets/images/popovers/popover-header.png": {
-      "path": "/1/asset/immutable/s/16830649227312546/assets/images/popovers/popover-header.png",
-      "mimeType": "image/png"
-    },
     "/assets/images/themes/oneSalesforce/banner-brand-default.png": {
       "path": "/1/asset/immutable/s/16830649227689724/assets/images/themes/oneSalesforce/banner-brand-default.png",
       "mimeType": "image/png"
     },
-    "/assets/images/logo-noname.svg": {
-      "path": "/1/asset/immutable/s/16830649227262544/assets/images/logo-noname.svg",
-      "mimeType": "image/svg+xml"
+    "/assets/images/popovers/popover-header.png": {
+      "path": "/1/asset/immutable/s/16830649227312546/assets/images/popovers/popover-header.png",
+      "mimeType": "image/png"
     },
     "/assets/images/popovers/popover-action.png": {
       "path": "/1/asset/immutable/s/16830649227304046/assets/images/popovers/popover-action.png",
@@ -32,29 +28,33 @@
       "path": "/1/asset/immutable/s/16830649227201638/assets/images/group_avatar_160.png",
       "mimeType": "image/png"
     },
-    "/assets/images/profile_avatar_96.png": {
-      "path": "/1/asset/immutable/s/16830649227379788/assets/images/profile_avatar_96.png",
+    "/assets/images/group_avatar_200.png": {
+      "path": "/1/asset/immutable/s/16830649227210590/assets/images/group_avatar_200.png",
       "mimeType": "image/png"
     },
-    "/assets/images/profile_avatar_200.png": {
-      "path": "/1/asset/immutable/s/16830649227373436/assets/images/profile_avatar_200.png",
+    "/assets/images/profile_avatar_96.png": {
+      "path": "/1/asset/immutable/s/16830649227379788/assets/images/profile_avatar_96.png",
       "mimeType": "image/png"
     },
     "/assets/images/profile_avatar_160.png": {
       "path": "/1/asset/immutable/s/16830649227364060/assets/images/profile_avatar_160.png",
       "mimeType": "image/png"
     },
-    "/assets/images/einstein-headers/einstein-header-background.svg": {
-      "path": "/1/asset/immutable/s/16830649227191182/assets/images/einstein-headers/einstein-header-background.svg",
+    "/assets/images/logo-noname.svg": {
+      "path": "/1/asset/immutable/s/16830649227262544/assets/images/logo-noname.svg",
       "mimeType": "image/svg+xml"
+    },
+    "/assets/images/profile_avatar_200.png": {
+      "path": "/1/asset/immutable/s/16830649227373436/assets/images/profile_avatar_200.png",
+      "mimeType": "image/png"
     },
     "/assets/images/einstein-headers/einstein-figure.svg": {
       "path": "/1/asset/immutable/s/16830649227181276/assets/images/einstein-headers/einstein-figure.svg",
       "mimeType": "image/svg+xml"
     },
-    "/assets/images/group_avatar_200.png": {
-      "path": "/1/asset/immutable/s/16830649227210590/assets/images/group_avatar_200.png",
-      "mimeType": "image/png"
+    "/assets/images/einstein-headers/einstein-header-background.svg": {
+      "path": "/1/asset/immutable/s/16830649227191182/assets/images/einstein-headers/einstein-header-background.svg",
+      "mimeType": "image/svg+xml"
     },
     "/assets/images/themes/oneSalesforce/banner-user-default.png": {
       "path": "/1/asset/immutable/s/16830649227844856/assets/images/themes/oneSalesforce/banner-user-default.png",
@@ -67,10 +67,6 @@
     "/assets/images/welcome-mat/bg-info@2x.png": {
       "path": "/1/asset/immutable/s/16830649227868076/assets/images/welcome-mat/bg-info@2x.png",
       "mimeType": "image/png"
-    },
-    "/assets/favicon2.ico": {
-      "path": "/assets/favicon2.ico",
-      "mimeType": "image/vnd.microsoft.icon"
     },
     "/assets/fonts/License-for-font.txt": {
       "path": "/assets/fonts/License-for-font.txt",

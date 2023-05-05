@@ -2,7 +2,7 @@
   "trailingComma": "none",
   "overrides": [
     {
-      "files": "**/lwc/**/*.html",
+      "files": "**/*.html",
       "options": { "parser": "lwc" }
     },
     {

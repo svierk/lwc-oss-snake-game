@@ -1,28 +1,28 @@
 {
   "bundles": {
     "snake/app": {
-      "version": "0.0.1",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/snake/app/v/0_0_1/s/68c5fdec1e8a70727098c19ec75d09a4ce6dff79/bundle_snake_app.js",
+      "version": "1.0.0",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/snake/app/v/1_0_0/s/8599cd216dcfd905f43941fd61f44303b7f9d03f/bundle_snake_app.js",
       "includedModules": [],
       "imports": [
-        "lwc/v/2_45_0"
+        "lwc/v/2_31_0"
       ]
     },
     "lwc": {
-      "version": "2.45.0",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwc/v/2_45_0/s/0e311e29362fde8cfc55a7256261ca3753b10b7e/bundle_lwc.js",
+      "version": "2.31.0",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwc/v/2_31_0/s/825961d4b38ab68f2b3fadf00ba6021168288878/bundle_lwc.js",
       "includedModules": [],
       "imports": []
     },
     "@lwrjs/app-service/snake/module/esm": {
       "version": "0.9.4",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/@lwrjs/app-service/snake/module/esm/v/0_9_4/s/2b90566e1875510d1aff728ca44d0a4165e4d4c6/bundle_@lwrjs_app-service_snake_module_esm.js",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/@lwrjs/app-service/snake/module/esm/v/0_9_4/s/5e3fc80036dc4fe75ba68855ccf6accd5ea44f56/bundle_@lwrjs_app-service_snake_module_esm.js",
       "includedModules": [],
       "imports": [
         "lwr/esmLoader/v/0_9_4",
-        "@lwc/synthetic-shadow/v/2_45_0",
+        "@lwc/synthetic-shadow/v/2_31_0",
         "lwr/profiler/v/0_9_4",
-        "lwc/v/2_45_0"
+        "lwc/v/2_31_0"
       ]
     },
     "lwr/esmLoader": {
@@ -32,8 +32,8 @@
       "imports": []
     },
     "@lwc/synthetic-shadow": {
-      "version": "2.45.0",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/@lwc/synthetic-shadow/v/2_45_0/s/ddf3fad75602b312b087e85d163f344970821fd2/bundle_@lwc_synthetic-shadow.js",
+      "version": "2.31.0",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/@lwc/synthetic-shadow/v/2_31_0/s/c99085510c6823cd7d58ec7ae103674ac45725c5/bundle_@lwc_synthetic-shadow.js",
       "includedModules": [],
       "imports": []
     },
