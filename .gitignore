@@ -1,3 +1,6 @@
 node_modules
 __lwr_cache__
 .DS_Store
+
+# Jest coverage and test reports
+coverage/

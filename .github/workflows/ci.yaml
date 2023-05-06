@@ -31,6 +31,8 @@ jobs:
         run: yarn run prettier
       - name: Check ESLint
         run: yarn run lint
+      - name: LWC Unit Tests
+        run: yarn run test:unit
       - name: Build production bundle
         uses: borales/actions-yarn@v4
         with:

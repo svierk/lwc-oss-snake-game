@@ -20,12 +20,20 @@
       "path": "/1/asset/immutable/s/16830649227304046/assets/images/popovers/popover-action.png",
       "mimeType": "image/png"
     },
+    "/assets/images/logo-noname.svg": {
+      "path": "/1/asset/immutable/s/16830649227262544/assets/images/logo-noname.svg",
+      "mimeType": "image/svg+xml"
+    },
     "/assets/images/group_avatar_96.png": {
       "path": "/1/asset/immutable/s/16830649227218278/assets/images/group_avatar_96.png",
       "mimeType": "image/png"
     },
     "/assets/images/group_avatar_160.png": {
       "path": "/1/asset/immutable/s/16830649227201638/assets/images/group_avatar_160.png",
+      "mimeType": "image/png"
+    },
+    "/assets/images/profile_avatar_160.png": {
+      "path": "/1/asset/immutable/s/16830649227364060/assets/images/profile_avatar_160.png",
       "mimeType": "image/png"
     },
     "/assets/images/group_avatar_200.png": {
@@ -36,12 +44,8 @@
       "path": "/1/asset/immutable/s/16830649227379788/assets/images/profile_avatar_96.png",
       "mimeType": "image/png"
     },
-    "/assets/images/profile_avatar_160.png": {
-      "path": "/1/asset/immutable/s/16830649227364060/assets/images/profile_avatar_160.png",
-      "mimeType": "image/png"
-    },
-    "/assets/images/logo-noname.svg": {
-      "path": "/1/asset/immutable/s/16830649227262544/assets/images/logo-noname.svg",
+    "/assets/images/einstein-headers/einstein-header-background.svg": {
+      "path": "/1/asset/immutable/s/16830649227191182/assets/images/einstein-headers/einstein-header-background.svg",
       "mimeType": "image/svg+xml"
     },
     "/assets/images/profile_avatar_200.png": {
@@ -52,16 +56,12 @@
       "path": "/1/asset/immutable/s/16830649227181276/assets/images/einstein-headers/einstein-figure.svg",
       "mimeType": "image/svg+xml"
     },
-    "/assets/images/einstein-headers/einstein-header-background.svg": {
-      "path": "/1/asset/immutable/s/16830649227191182/assets/images/einstein-headers/einstein-header-background.svg",
-      "mimeType": "image/svg+xml"
+    "/assets/images/themes/oneSalesforce/banner-group-public-default.png": {
+      "path": "/1/asset/immutable/s/16830649227770464/assets/images/themes/oneSalesforce/banner-group-public-default.png",
+      "mimeType": "image/png"
     },
     "/assets/images/themes/oneSalesforce/banner-user-default.png": {
       "path": "/1/asset/immutable/s/16830649227844856/assets/images/themes/oneSalesforce/banner-user-default.png",
-      "mimeType": "image/png"
-    },
-    "/assets/images/themes/oneSalesforce/banner-group-public-default.png": {
-      "path": "/1/asset/immutable/s/16830649227770464/assets/images/themes/oneSalesforce/banner-group-public-default.png",
       "mimeType": "image/png"
     },
     "/assets/images/welcome-mat/bg-info@2x.png": {

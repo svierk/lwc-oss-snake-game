@@ -4,6 +4,7 @@
 
 __lwr_cache__
 .vscode
+coverage/
 node_modules
 site
 src/assets

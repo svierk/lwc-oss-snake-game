@@ -132,8 +132,10 @@ export default class Game extends LightningElement {
 
     if (!this.tail.includes(`${xFood}:${yFood}`)) {
       const foodPosIndex = this.gameBlocks.findIndex((x) => x.id === `${xFood}:${yFood}`);
-      this.gameBlocks[foodPosIndex].food = true;
-      this.gameBlocks[foodPosIndex].class = 'food';
+      if (this.gameBlocks[foodPosIndex]) {
+        this.gameBlocks[foodPosIndex].food = true;
+        this.gameBlocks[foodPosIndex].class = 'food';
+      }
     } else {
       this.generateFood();
     }
