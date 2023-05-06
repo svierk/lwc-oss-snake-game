@@ -66,7 +66,8 @@
       "prettier --write --check"
     ],
     "**/*.{css,html,js}": [
-      "eslint"
+      "eslint",
+      "jest"
     ]
   }
 }
