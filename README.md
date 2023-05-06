@@ -46,21 +46,28 @@ package.json            // npm packaging configuration
 The LWR server is configured in `lwr.config.json`, at the root of the project. It has two LWC module and one server-side route.
 
 ```json
-// lwr.config.json
 {
-  "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
+  "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }, { "npm": "lightning-base-components" }] },
   "routes": [
     {
-      "id": "example",
+      "id": "snake",
       "path": "/",
-      "rootComponent": "example/app"
+      "rootComponent": "snake/app",
+      "layoutTemplate": "$layoutsDir/main.html",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
     }
   ],
   "assets": [
     {
       "alias": "assetsDir",
       "dir": "$rootDir/src/assets",
-      "urlPath": "/public/assets"
+      "urlPath": "/assets"
+    },
+    {
+      "dir": "$rootDir/src/assets/fonts",
+      "urlPath": "/fonts"
     },
     {
       "alias": "favicon",
