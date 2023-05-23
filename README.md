@@ -80,24 +80,45 @@ The LWR server is configured in `lwr.config.json`, at the root of the project. I
 
 ## Running Linter and Prettier
 
-```bash
+Run _Prettier_ to check all files for formatting issues:
+
+```
 yarn run prettier
+```
+
+Run _ESLint_ to check for linting issues:
+
+```
 yarn run lint
 ```
 
 ## Running the Project in Dev Mode
 
-```bash
+Install all required dependencies:
+
+```
 yarn install
-yarn dev # dev:compat for AMD format
+```
+
+Start the local development server:
+
+```
+yarn dev
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)
 
 ## Statically Generate and Preview the Site
 
-```bash
-yarn build # dev:prod-compat for AMD format
+Build the project:
+
+```
+yarn build
+```
+
+Preview the generated site:
+
+```
 yarn start
 ```
 
