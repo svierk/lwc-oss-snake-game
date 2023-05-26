@@ -9903,8 +9903,8 @@ a.slds-button--inverse:focus{
   right:0;
   bottom:0;
   left:0;
-  background-image:url("/1/asset/immutable/s/16830649227689724/assets/images/themes/oneSalesforce/banner-brand-default.png"), -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(1, 68, 134, 0)), to(#014486));
-  background-image:url("/1/asset/immutable/s/16830649227689724/assets/images/themes/oneSalesforce/banner-brand-default.png"), linear-gradient(to top, rgba(1, 68, 134, 0) 0, #014486);
+  background-image:url("/1/asset/immutable/s/16838316078955582/assets/images/themes/oneSalesforce/banner-brand-default.png"), -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(1, 68, 134, 0)), to(#014486));
+  background-image:url("/1/asset/immutable/s/16838316078955582/assets/images/themes/oneSalesforce/banner-brand-default.png"), linear-gradient(to top, rgba(1, 68, 134, 0) 0, #014486);
   background-repeat:repeat-x;
   background-position:top left;
 }
@@ -9957,10 +9957,10 @@ a.slds-button--inverse:focus{
   height:0;
 }
 .slds-brand-band.slds-brand-band_group:before{
-  background-image:url("/1/asset/immutable/s/16830649227770464/assets/images/themes/oneSalesforce/banner-group-public-default.png");
+  background-image:url("/1/asset/immutable/s/16838316078974590/assets/images/themes/oneSalesforce/banner-group-public-default.png");
 }
 .slds-brand-band.slds-brand-band_user:before{
-  background-image:url("/1/asset/immutable/s/16830649227844856/assets/images/themes/oneSalesforce/banner-user-default.png");
+  background-image:url("/1/asset/immutable/s/16838316078987402/assets/images/themes/oneSalesforce/banner-user-default.png");
 }
 .slds-brand-band .slds-brand-band_blank{
   background:var(--slds-g-color-neutral-base-100, white);
@@ -10969,7 +10969,7 @@ a.slds-button--inverse:focus{
 .slds-popover_walkthrough .slds-popover__header,
 .slds-popover--walkthrough .slds-popover__header{
   background-color:var(--slds-g-color-brand-base-20, #032d60);
-  background-image:url("/1/asset/immutable/s/16830649227312546/assets/images/popovers/popover-header.png");
+  background-image:url("/1/asset/immutable/s/16838316078908178/assets/images/popovers/popover-header.png");
   background-repeat:no-repeat;
   background-position:bottom;
   background-size:contain;
@@ -11017,7 +11017,7 @@ a.slds-button--inverse:focus{
 .slds-popover_feature{
   border-color:var(--slds-g-color-brand-base-50, #0176d3);
   background-color:var(--slds-g-color-brand-base-50, #0176d3);
-  background-image:url("/1/asset/immutable/s/16830649227304046/assets/images/popovers/popover-action.png");
+  background-image:url("/1/asset/immutable/s/16838316078907354/assets/images/popovers/popover-action.png");
   background-repeat:no-repeat;
   background-size:100% 2.25rem;
   background-position:bottom;
@@ -13058,7 +13058,7 @@ input[readonly][role=combobox][disabled]{
 .slds-global-header__logo{
   width:12.5rem;
   height:2.5rem;
-  background-image:url("/1/asset/immutable/s/16830649227262544/assets/images/logo-noname.svg");
+  background-image:url("/1/asset/immutable/s/16838316078901428/assets/images/logo-noname.svg");
   background-size:contain;
   background-repeat:no-repeat;
   background-position:left center;
@@ -19785,22 +19785,22 @@ input[readonly][role=combobox][disabled]{
   color:var(--slds-c-avatar-text-color-hover, currentColor);
 }
 .slds-avatar.slds-avatar_group-image-small{
-  background:url("/1/asset/immutable/s/16830649227218278/assets/images/group_avatar_96.png") top left/cover no-repeat;
+  background:url("/1/asset/immutable/s/16838316078894964/assets/images/group_avatar_96.png") top left/cover no-repeat;
 }
 .slds-avatar.slds-avatar_group-image-medium{
-  background:url("/1/asset/immutable/s/16830649227201638/assets/images/group_avatar_160.png") top left/cover no-repeat;
+  background:url("/1/asset/immutable/s/16838316078892194/assets/images/group_avatar_160.png") top left/cover no-repeat;
 }
 .slds-avatar.slds-avatar_group-image-large{
-  background:url("/1/asset/immutable/s/16830649227210590/assets/images/group_avatar_200.png") top left/cover no-repeat;
+  background:url("/1/asset/immutable/s/16838316078893594/assets/images/group_avatar_200.png") top left/cover no-repeat;
 }
 .slds-avatar.slds-avatar_profile-image-small{
-  background:url("/1/asset/immutable/s/16830649227379788/assets/images/profile_avatar_96.png") top left/cover no-repeat;
+  background:url("/1/asset/immutable/s/16838316078925104/assets/images/profile_avatar_96.png") top left/cover no-repeat;
 }
 .slds-avatar.slds-avatar_profile-image-medium{
-  background:url("/1/asset/immutable/s/16830649227364060/assets/images/profile_avatar_160.png") top left/cover no-repeat;
+  background:url("/1/asset/immutable/s/16838316078923730/assets/images/profile_avatar_160.png") top left/cover no-repeat;
 }
 .slds-avatar.slds-avatar_profile-image-large{
-  background:url("/1/asset/immutable/s/16830649227373436/assets/images/profile_avatar_200.png") top left/cover no-repeat;
+  background:url("/1/asset/immutable/s/16838316078924458/assets/images/profile_avatar_200.png") top left/cover no-repeat;
 }
 .slds-avatar_x-small,
 .slds-avatar--x-small{
@@ -21527,7 +21527,7 @@ input[readonly][role=combobox][disabled]{
 .slds-einstein-header{
   position:relative;
   background-color:var(--slds-g-color-palette-cloud-blue-80, #90d0fe);
-  background-image:url("/1/asset/immutable/s/16830649227191182/assets/images/einstein-headers/einstein-header-background.svg");
+  background-image:url("/1/asset/immutable/s/16838316078890730/assets/images/einstein-headers/einstein-header-background.svg");
   background-repeat:no-repeat;
   background-position:left top;
   background-size:cover;
@@ -21544,7 +21544,7 @@ input[readonly][role=combobox][disabled]{
 .slds-einstein-header .slds-einstein-header__figure:last-child{
   margin-bottom:calc((0.75rem + 5px) * -1);
   height:4.75rem;
-  background-image:url("/1/asset/immutable/s/16830649227181276/assets/images/einstein-headers/einstein-figure.svg");
+  background-image:url("/1/asset/immutable/s/16838316078889106/assets/images/einstein-headers/einstein-figure.svg");
   background-position:right bottom;
   background-repeat:no-repeat;
 }
@@ -21817,7 +21817,7 @@ input[readonly][role=combobox][disabled]{
   overflow:auto;
   padding:1rem 3rem 7.75rem;
   color:var(--slds-g-color-brand-base-20, #032d60);
-  background-image:url("/1/asset/immutable/s/16830649227868076/assets/images/welcome-mat/bg-info@2x.png");
+  background-image:url("/1/asset/immutable/s/16838316078991564/assets/images/welcome-mat/bg-info@2x.png");
   background-position:bottom center;
   background-repeat:no-repeat;
   background-size:contain;

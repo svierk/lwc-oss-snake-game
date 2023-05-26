@@ -2,7 +2,7 @@
   "bundles": {
     "snake/app": {
       "version": "1.0.0",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/snake/app/v/1_0_0/s/2fc80f2f2250e54ba88bf922d4c517b98ad8d0da/bundle_snake_app.js",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/snake/app/v/1_0_0/s/10c02c71434e8fe37ddfcd1fd4eb9292e2d7dfa3/bundle_snake_app.js",
       "includedModules": [],
       "imports": [
         "lwc/v/2_31_0"
@@ -10,13 +10,13 @@
     },
     "lwc": {
       "version": "2.31.0",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwc/v/2_31_0/s/825961d4b38ab68f2b3fadf00ba6021168288878/bundle_lwc.js",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwc/v/2_31_0/s/24e39db4c0435f3267b0b8e59aaaff416c444334/bundle_lwc.js",
       "includedModules": [],
       "imports": []
     },
     "@lwrjs/app-service/snake/module/esm": {
       "version": "0.9.4",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/@lwrjs/app-service/snake/module/esm/v/0_9_4/s/5e3fc80036dc4fe75ba68855ccf6accd5ea44f56/bundle_@lwrjs_app-service_snake_module_esm.js",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/@lwrjs/app-service/snake/module/esm/v/0_9_4/s/1d5eb00be9b1fc3c09dce0d5a2e9c490136f0c06/bundle_@lwrjs_app-service_snake_module_esm.js",
       "includedModules": [],
       "imports": [
         "lwr/esmLoader/v/0_9_4",
@@ -27,19 +27,19 @@
     },
     "lwr/esmLoader": {
       "version": "0.9.4",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwr/esmLoader/v/0_9_4/s/92d1233e0032d3286b96562a64176966da523c9e/bundle_lwr_esmLoader.js",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwr/esmLoader/v/0_9_4/s/168d648e42d3f63dc21c61a3011eb62e33306242/bundle_lwr_esmLoader.js",
       "includedModules": [],
       "imports": []
     },
     "@lwc/synthetic-shadow": {
       "version": "2.31.0",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/@lwc/synthetic-shadow/v/2_31_0/s/c99085510c6823cd7d58ec7ae103674ac45725c5/bundle_@lwc_synthetic-shadow.js",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/@lwc/synthetic-shadow/v/2_31_0/s/3b404ce4828a1351dec8b664d45810f670874fea/bundle_@lwc_synthetic-shadow.js",
       "includedModules": [],
       "imports": []
     },
     "lwr/profiler": {
       "version": "0.9.4",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwr/profiler/v/0_9_4/s/6021c80cad652ec7cf894c25f1a298cab4812a69/bundle_lwr_profiler.js",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwr/profiler/v/0_9_4/s/0198ff6b5b30a8c4ad452e2c0dc10504366c2c46/bundle_lwr_profiler.js",
       "includedModules": [],
       "imports": []
     }
