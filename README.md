@@ -97,7 +97,7 @@ yarn run lint
 Install all required dependencies:
 
 ```
-yarn install --ignore-engines
+yarn install
 ```
 
 Start the local development server:
