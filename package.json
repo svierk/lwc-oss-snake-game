@@ -38,7 +38,7 @@
     "@babel/core": "^7.22.5",
     "@babel/eslint-parser": "^7.22.5",
     "@lwc/eslint-plugin-lwc": "^1.6.2",
-    "@lwc/jest-preset": "^11.8.0",
+    "@lwc/jest-preset": "^12.0.0",
     "@sa11y/jest": "5.1.0",
     "@salesforce-ux/design-system": "^2.21.1",
     "@salesforce/eslint-config-lwc": "^3.4.0",
