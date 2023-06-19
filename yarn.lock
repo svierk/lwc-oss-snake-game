@@ -1965,10 +1965,10 @@
   dependencies:
     "@sa11y/common" "5.1.0"
 
-"@salesforce-ux/design-system@^2.21.1":
-  version "2.21.1"
-  resolved "https://registry.yarnpkg.com/@salesforce-ux/design-system/-/design-system-2.21.1.tgz#4a558f8093dfa3116dae71e796df75ff8b29d967"
-  integrity sha512-4zFo7M1SMDOWiNPaZDBcbt57kS2W9mTOP6TzYPxG8YVYt9uEQBwGdJ+j3MFjKqq4dEXBh83vfyjybGiKK4cFsA==
+"@salesforce-ux/design-system@^2.21.2":
+  version "2.21.2"
+  resolved "https://registry.yarnpkg.com/@salesforce-ux/design-system/-/design-system-2.21.2.tgz#6bfe228b3b52ba4b0aea2457c2a33d26d6e25333"
+  integrity sha512-E+ey3wnIBvVZRyJY2mNrQ6qOcbUJlLzbofe3xXScq1W4wC9YJCbqSHrRl61SFldC2KAhQXuENVQsRpcv08afkw==
 
 "@salesforce/eslint-config-lwc@^3.4.0":
   version "3.4.0"
