@@ -37,7 +37,7 @@
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/eslint-parser": "^7.22.5",
-    "@lwc/eslint-plugin-lwc": "^1.6.2",
+    "@lwc/eslint-plugin-lwc": "^1.6.3",
     "@lwc/jest-preset": "^12.0.2",
     "@sa11y/jest": "5.2.0",
     "@salesforce-ux/design-system": "^2.21.2",
