@@ -40,7 +40,7 @@
     "@lwc/eslint-plugin-lwc": "^1.6.3",
     "@lwc/jest-preset": "^12.0.2",
     "@sa11y/jest": "5.2.0",
-    "@salesforce-ux/design-system": "^2.21.2",
+    "@salesforce-ux/design-system": "^2.21.3",
     "@salesforce/eslint-config-lwc": "^3.4.0",
     "@salesforce/eslint-plugin-lightning": "^1.0.0",
     "@salesforce/sfdx-lwc-jest": "^1.4.1",
