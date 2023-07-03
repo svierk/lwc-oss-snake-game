@@ -1356,14 +1356,14 @@
     "@lwc/jest-serializer" "11.8.0"
     "@lwc/jest-transformer" "11.8.0"
 
-"@lwc/jest-preset@^12.0.2":
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/@lwc/jest-preset/-/jest-preset-12.0.2.tgz#0ff0463f9549f2e341a548fe5aa52949cd2a4e74"
-  integrity sha512-6krbLaWjl1N5NHxcMQI400RigeGE5PwTpDpjPiLp4y+h6r2KJ4dAn008F0c9+VFhNf/VNqKZOFFftXyIVB/rwg==
+"@lwc/jest-preset@^12.0.3":
+  version "12.0.3"
+  resolved "https://registry.yarnpkg.com/@lwc/jest-preset/-/jest-preset-12.0.3.tgz#538a9c1f64ada1bbcf594cff0e973e5342d75f66"
+  integrity sha512-+wY72PxB84Fu7Yj8xNdXYRMU8My+vvyq8efHxUHfAbvoeXJiEhNsJzqRf6HQ+yYGpXAQ6oz+oYJ2HQ43cM1p7A==
   dependencies:
-    "@lwc/jest-resolver" "12.0.2"
-    "@lwc/jest-serializer" "12.0.2"
-    "@lwc/jest-transformer" "12.0.2"
+    "@lwc/jest-resolver" "12.0.3"
+    "@lwc/jest-serializer" "12.0.3"
+    "@lwc/jest-transformer" "12.0.3"
 
 "@lwc/jest-resolver@11.8.0":
   version "11.8.0"
@@ -1372,12 +1372,12 @@
   dependencies:
     "@lwc/jest-shared" "11.8.0"
 
-"@lwc/jest-resolver@12.0.2":
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/@lwc/jest-resolver/-/jest-resolver-12.0.2.tgz#c9975ff7572491783de52a7365bd343949d66282"
-  integrity sha512-4+BodwiCBJ7nZlX8W2iwWoDgrJxinVoiabB/7NSaTzBhGE26XQ5KxTRLkzSddC91qI69Mw5pkeSO/sBPWRVg4A==
+"@lwc/jest-resolver@12.0.3":
+  version "12.0.3"
+  resolved "https://registry.yarnpkg.com/@lwc/jest-resolver/-/jest-resolver-12.0.3.tgz#e6192656efde33145ccfedea39c7d4c55bfa0d42"
+  integrity sha512-8mjio3XqwoZXVnC92ndJ2VdacuikrR0zM5Icu6xgWUwrvfKXmY1n1cjvi+8MF6ugk0q3X8kKTAkVE8CSkwxQCA==
   dependencies:
-    "@lwc/jest-shared" "12.0.2"
+    "@lwc/jest-shared" "12.0.3"
 
 "@lwc/jest-serializer@11.8.0":
   version "11.8.0"
@@ -1386,12 +1386,12 @@
   dependencies:
     pretty-format "^29.5.0"
 
-"@lwc/jest-serializer@12.0.2":
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/@lwc/jest-serializer/-/jest-serializer-12.0.2.tgz#4b1eb7f1c48feeb1e6f2bdeee619eaae97fd473b"
-  integrity sha512-b7xz7ZaATftLsVEjJqcupdaYQIDaU6JCajkH/nujXgEBhtv8zIWH+NGMwkqPZImScO2sSAi5OZnCsDfQOb4Jvg==
+"@lwc/jest-serializer@12.0.3":
+  version "12.0.3"
+  resolved "https://registry.yarnpkg.com/@lwc/jest-serializer/-/jest-serializer-12.0.3.tgz#a67203f508eb333d508b7e327905f13d0aead64e"
+  integrity sha512-Lvi13yMrzDbB94GCkkg0SYZuKasE3TEU+zaw6HQgR5aIDrcuqSj0NiZWeq7euk7P+Tf+FyFeSLL/6HZkp7dnYQ==
   dependencies:
-    "@lwc/jest-shared" "12.0.2"
+    "@lwc/jest-shared" "12.0.3"
     pretty-format "^29.5.0"
 
 "@lwc/jest-shared@11.8.0":
@@ -1399,10 +1399,10 @@
   resolved "https://registry.yarnpkg.com/@lwc/jest-shared/-/jest-shared-11.8.0.tgz#dde7b80cca2eb1360a11d735e3da4c98ac036420"
   integrity sha512-g4xgbD5+NC75omjZ6YZZ/tJhhrBnFEj2Lx/oY/yLtKUDXRX//PiWmGGcdlUbM5X8T8Bx9VR1wFttlB2Ta26VPQ==
 
-"@lwc/jest-shared@12.0.2":
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/@lwc/jest-shared/-/jest-shared-12.0.2.tgz#018da27f302349727918f2311117d81dce87a747"
-  integrity sha512-qUJ+sy6HgTW1GHHTKuYJzAJRsaDKYrw8fxyiSZ9NPKMJsGe66BIwHF9A8I4Z546UGLAppTA9zLl67pPlpsLcGQ==
+"@lwc/jest-shared@12.0.3":
+  version "12.0.3"
+  resolved "https://registry.yarnpkg.com/@lwc/jest-shared/-/jest-shared-12.0.3.tgz#8fa89a8248217a1d9039b0cf2dcd94237d9b0243"
+  integrity sha512-zIAnVqB+052kuN7XbRmj/bEYI2VaJoFR7tmvX4pX8NspxuVTpIus9lZ1KqJod2wnjOl3MHZX7HqFj3qcnjW/pg==
 
 "@lwc/jest-transformer@11.8.0":
   version "11.8.0"
@@ -1418,10 +1418,10 @@
     "@lwc/jest-shared" "11.8.0"
     babel-preset-jest "^29.5.0"
 
-"@lwc/jest-transformer@12.0.2":
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/@lwc/jest-transformer/-/jest-transformer-12.0.2.tgz#b2aa733d2995c1dff9b9319a4941ab691740f608"
-  integrity sha512-Sk8pRhD+WNiOK1dtQ0wMkhbru7+AxRvkECsLCyKfRUvT25RRQDCqHdQ4IiNOhpf7txeCCJ4ikQKctQQ8XlNE3g==
+"@lwc/jest-transformer@12.0.3":
+  version "12.0.3"
+  resolved "https://registry.yarnpkg.com/@lwc/jest-transformer/-/jest-transformer-12.0.3.tgz#ff931f8f1e97e1c35dcb3e04bebbb7b4b150f9e6"
+  integrity sha512-t7vlXqMzB0cQj5LRdChpqdxn35+IUObErw05s+MCXE5I9IbXKEZusDOfxZx+UtYTO4lNy/ZL4uLxoA/YdTGQIw==
   dependencies:
     "@babel/core" "^7.21.3"
     "@babel/plugin-proposal-dynamic-import" "^7.18.6"
@@ -1429,7 +1429,7 @@
     "@babel/plugin-syntax-decorators" "^7.21.0"
     "@babel/plugin-transform-modules-commonjs" "^7.21.2"
     "@babel/preset-typescript" "^7.21.0"
-    "@lwc/jest-shared" "12.0.2"
+    "@lwc/jest-shared" "12.0.3"
     babel-preset-jest "^29.5.0"
     magic-string "^0.30.0"
 
