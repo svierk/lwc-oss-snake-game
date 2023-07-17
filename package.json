@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "jest-environment-jsdom": "^29.6.1",
-    "lwc": "2.50.0",
+    "lwc": "3.0.2",
     "lwr": "0.10.0"
   },
   "devDependencies": {
