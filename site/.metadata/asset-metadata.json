@@ -8,21 +8,21 @@
       "path": "/1/asset/immutable/s/16838316079035774/assets/styles/salesforce-lightning-design-system.css",
       "mimeType": "text/css"
     },
-    "/assets/images/themes/oneSalesforce/banner-brand-default.png": {
-      "path": "/1/asset/immutable/s/16838316078955582/assets/images/themes/oneSalesforce/banner-brand-default.png",
-      "mimeType": "image/png"
-    },
     "/assets/images/popovers/popover-header.png": {
       "path": "/1/asset/immutable/s/16838316078908178/assets/images/popovers/popover-header.png",
+      "mimeType": "image/png"
+    },
+    "/assets/images/popovers/popover-action.png": {
+      "path": "/1/asset/immutable/s/16838316078907354/assets/images/popovers/popover-action.png",
+      "mimeType": "image/png"
+    },
+    "/assets/images/themes/oneSalesforce/banner-brand-default.png": {
+      "path": "/1/asset/immutable/s/16838316078955582/assets/images/themes/oneSalesforce/banner-brand-default.png",
       "mimeType": "image/png"
     },
     "/assets/images/logo-noname.svg": {
       "path": "/1/asset/immutable/s/16838316078901428/assets/images/logo-noname.svg",
       "mimeType": "image/svg+xml"
-    },
-    "/assets/images/popovers/popover-action.png": {
-      "path": "/1/asset/immutable/s/16838316078907354/assets/images/popovers/popover-action.png",
-      "mimeType": "image/png"
     },
     "/assets/images/group_avatar_96.png": {
       "path": "/1/asset/immutable/s/16838316078894964/assets/images/group_avatar_96.png",
