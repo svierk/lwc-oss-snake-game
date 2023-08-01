@@ -32,7 +32,7 @@
   "dependencies": {
     "jest-environment-jsdom": "^29.6.1",
     "lwc": "3.1.0",
-    "lwr": "0.10.1"
+    "lwr": "0.10.2"
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",
