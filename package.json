@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",
-    "@babel/eslint-parser": "^7.22.9",
+    "@babel/eslint-parser": "^7.22.10",
     "@lwc/eslint-plugin-lwc": "^1.6.3",
     "@lwc/jest-preset": "^13.0.0",
     "@sa11y/jest": "5.2.0",
