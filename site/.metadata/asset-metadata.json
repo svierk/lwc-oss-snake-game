@@ -24,16 +24,8 @@
       "path": "/1/asset/immutable/s/16838316078901428/assets/images/logo-noname.svg",
       "mimeType": "image/svg+xml"
     },
-    "/assets/images/group_avatar_96.png": {
-      "path": "/1/asset/immutable/s/16838316078894964/assets/images/group_avatar_96.png",
-      "mimeType": "image/png"
-    },
     "/assets/images/group_avatar_160.png": {
       "path": "/1/asset/immutable/s/16838316078892194/assets/images/group_avatar_160.png",
-      "mimeType": "image/png"
-    },
-    "/assets/images/group_avatar_200.png": {
-      "path": "/1/asset/immutable/s/16838316078893594/assets/images/group_avatar_200.png",
       "mimeType": "image/png"
     },
     "/assets/images/profile_avatar_96.png": {
@@ -44,17 +36,25 @@
       "path": "/1/asset/immutable/s/16838316078923730/assets/images/profile_avatar_160.png",
       "mimeType": "image/png"
     },
-    "/assets/images/profile_avatar_200.png": {
-      "path": "/1/asset/immutable/s/16838316078924458/assets/images/profile_avatar_200.png",
-      "mimeType": "image/png"
-    },
     "/assets/images/einstein-headers/einstein-header-background.svg": {
       "path": "/1/asset/immutable/s/16838316078890730/assets/images/einstein-headers/einstein-header-background.svg",
       "mimeType": "image/svg+xml"
     },
+    "/assets/images/profile_avatar_200.png": {
+      "path": "/1/asset/immutable/s/16838316078924458/assets/images/profile_avatar_200.png",
+      "mimeType": "image/png"
+    },
     "/assets/images/einstein-headers/einstein-figure.svg": {
       "path": "/1/asset/immutable/s/16838316078889106/assets/images/einstein-headers/einstein-figure.svg",
       "mimeType": "image/svg+xml"
+    },
+    "/assets/images/group_avatar_96.png": {
+      "path": "/1/asset/immutable/s/16838316078894964/assets/images/group_avatar_96.png",
+      "mimeType": "image/png"
+    },
+    "/assets/images/group_avatar_200.png": {
+      "path": "/1/asset/immutable/s/16838316078893594/assets/images/group_avatar_200.png",
+      "mimeType": "image/png"
     },
     "/assets/images/themes/oneSalesforce/banner-group-public-default.png": {
       "path": "/1/asset/immutable/s/16838316078974590/assets/images/themes/oneSalesforce/banner-group-public-default.png",
