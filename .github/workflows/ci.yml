@@ -14,8 +14,8 @@ jobs:
       - uses: actions/checkout@main
         with:
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
-      - uses: ./.github/workflows/get-node-version.yml
-      - name: Run install
+      - uses: ./.github/actions/get-node-version
+      - name: Install Dependencies
         uses: borales/actions-yarn@v4
         with:
           cmd: install # will run `yarn install` command
@@ -25,7 +25,7 @@ jobs:
         run: yarn run lint
       - name: LWC Unit Tests
         run: yarn run test:unit
-      - name: Build production bundle
+      - name: Build Production Bundle
         uses: borales/actions-yarn@v4
         with:
           cmd: build # will run `yarn build` command
