@@ -8,21 +8,16 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@main
+      - name: Checkout
+        uses: actions/checkout@main
         with:
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Get Node.js Version
-        run: |
-          echo "$(cat ./package.json)" | jq .engines.node | xargs -I {} echo "NodeVersion="{} >> $GITHUB_ENV
-      - name: Use Node.js ${{ env.NodeVersion }}
-        uses: actions/setup-node@main
-        with:
-          node-version: ${{ env.NodeVersion }}
-          cache: 'npm'
-      - name: Run install
+      - name: Select Node Version
+        uses: ./.github/actions/get-node-version
+      - name: Install Dependencies
         uses: borales/actions-yarn@v4
         with:
           cmd: install # will run `yarn install` command
@@ -32,8 +27,7 @@ jobs:
         run: yarn run lint
       - name: LWC Unit Tests
         run: yarn run test:unit
-      - name: Build production bundle
+      - name: Build Production Bundle
         uses: borales/actions-yarn@v4
         with:
           cmd: build # will run `yarn build` command
-
