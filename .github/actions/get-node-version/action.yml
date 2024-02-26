@@ -1,5 +1,5 @@
 name: 'Get Node Version'
-description: ''
+description: 'Pulls the Node.js version to be used from the package.json file of the project.'
 
 runs:
   using: composite
