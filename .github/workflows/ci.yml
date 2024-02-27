@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
       - name: Select Node Version
-        uses: svierk/get-node-version@v1
+        uses: svierk/get-node-version@v1.0.0
       - name: Install Dependencies
         uses: borales/actions-yarn@v4
         with:
