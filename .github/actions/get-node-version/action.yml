@@ -1,0 +1,26 @@
+name: 'Get Node Version'
+description: 'Pulls the Node.js version to be used from the package.json file of a project.'
+
+inputs:
+  path:
+    description: 'Specify the path where the package.json file can be found.'
+    required: false
+    default: './'
+  package-manager:
+    description: 'Specify the package manager to be used. Supported values: npm, yarn'
+    required: false
+    default: 'npm'
+
+runs:
+  using: composite
+  steps:
+    - name: Get Node.js Version
+      shell: bash
+      run: |
+        echo "$(cat ${{ inputs.path }}package.json)" | jq .engines.node | xargs -I {} echo "NodeVersion="{} >> $GITHUB_ENV
+    - name: Use Node.js ${{ env.NodeVersion }}
+      uses: actions/setup-node@main
+      with:
+        node-version: ${{ env.NodeVersion }}
+        cache: ${{ inputs.package-manager }}
+        cache-dependency-path: ${{ inputs.package-manager == 'npm' && '${{ inputs.path }}package-lock.json' || '${{ inputs.path }}yarn.lock' }}
