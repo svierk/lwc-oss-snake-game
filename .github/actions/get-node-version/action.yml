@@ -23,4 +23,4 @@ runs:
       with:
         node-version: ${{ env.NodeVersion }}
         cache: ${{ inputs.package-manager }}
-        cache-dependency-path: ${{ inputs.package-manager == 'npm' && format('{0}/package-lock.json', inputs.path) || format('{0}/yarn.lock', inputs.path) }}
+        cache-dependency-path: ${{ inputs.package-manager == 'npm' && format('{0}package-lock.json', inputs.path) || format('{0}yarn.lock', inputs.path) }}
