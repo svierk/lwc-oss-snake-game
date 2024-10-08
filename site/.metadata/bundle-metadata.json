@@ -1,47 +1,41 @@
 {
   "bundles": {
-    "snake/app": {
+    "lwc|v/6_7_2": {
+      "version": "6.7.2",
+      "path": "/1/bundle/amd/l/en-US/bi/0/module/mi/lwc/v/6_7_2/s/c447f184142e6ebbe44ba55c084ee432f2d37ded/bundle_lwc.js",
+      "includedModules": [],
+      "imports": [],
+      "dynamicImports": [],
+      "integrity": "sha256-6SjQcXSpRjhYGA5WWKc8MOf1OY9YbxG/Vhpz+H+GVb0="
+    },
+    "snake/app|v/1_0_0": {
       "version": "1.0.0",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/snake/app/v/1_0_0/s/8ccd0f97f6a3c259f9ff8652497830b8f4c68790/bundle_snake_app.js",
-      "includedModules": [],
+      "path": "/1/bundle/amd/l/en-US/bi/0/module/mi/snake/app/v/1_0_0/s/56a78ba3c9a5528a0a63bc6c7e51dd8dfb2f65df/bundle_snake_app.js",
+      "includedModules": [
+        "snake/game|v/1_0_0"
+      ],
       "imports": [
-        "lwc/v/3_1_3"
-      ]
+        "lwc|v/6_7_2"
+      ],
+      "dynamicImports": [],
+      "integrity": "sha256-e2qiC+WVHy6ZbER9UkrSVlgiuMSgQVRydaauWRpPeG4="
     },
-    "lwc": {
-      "version": "3.1.3",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwc/v/3_1_3/s/b7112bcd0abd5e192d64cf311b07c2b9d9d5bb5f/bundle_lwc.js",
-      "includedModules": [],
-      "imports": []
-    },
-    "@lwrjs/app-service/snake/module/esm": {
-      "version": "0.10.2",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/@lwrjs/app-service/snake/module/esm/v/0_10_2/s/9ff5e3393cf5dc6c55fc7b6df5bd9805b3cf08e8/bundle_@lwrjs_app-service_snake_module_esm.js",
-      "includedModules": [],
+    "@lwrjs/app-service/snake/module/amd|v/0_14_3": {
+      "version": "0.14.3",
+      "path": "/1/bundle/amd/l/en-US/bi/0/module/mi/@lwrjs/app-service/snake/module/amd/v/0_14_3/s/e4c62cddb26e11f2403231fbfd2afbc3d3abd9c1/bundle_@lwrjs_app-service_snake_module_amd.js",
+      "includedModules": [
+        "lwr/metrics|v/0_14_3",
+        "lwr/init|v/0_14_3",
+        "@lwc/synthetic-shadow|v/6_7_2",
+        "lwr/preInit|v/0_14_3"
+      ],
       "imports": [
-        "lwr/esmLoader/v/0_10_2",
-        "@lwc/synthetic-shadow/v/3_1_3",
-        "lwr/profiler/v/0_10_2",
-        "lwc/v/3_1_3"
-      ]
-    },
-    "lwr/esmLoader": {
-      "version": "0.10.2",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwr/esmLoader/v/0_10_2/s/ab6f49ff22a6141279b15316909da007ef057e68/bundle_lwr_esmLoader.js",
-      "includedModules": [],
-      "imports": []
-    },
-    "@lwc/synthetic-shadow": {
-      "version": "3.1.3",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/@lwc/synthetic-shadow/v/3_1_3/s/b26f5357dfe5115dd0cf49d3276ef861c0a5b7ea/bundle_@lwc_synthetic-shadow.js",
-      "includedModules": [],
-      "imports": []
-    },
-    "lwr/profiler": {
-      "version": "0.10.2",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwr/profiler/v/0_10_2/s/f42f0531e2d32a3590047fabb42fe837266d2d95/bundle_lwr_profiler.js",
-      "includedModules": [],
-      "imports": []
+        "lwr/profiler|v/0_14_3",
+        "lwc|v/6_7_2",
+        "lwr/loader|v/0_14_3"
+      ],
+      "dynamicImports": [],
+      "integrity": "sha256-7OWQcPXc4uXbG03d1/w4wDN//TWEXOeQXyluH/0l5U4="
     }
   }
 }
