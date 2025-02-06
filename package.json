@@ -19,7 +19,7 @@
     "lint:sonar": "eslint -f json -o eslint-report.json **/src/**/*.js",
     "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\" --check",
     "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
-    "postinstall": "husky install",
+    "postinstall": "husky",
     "precommit": "lint-staged",
     "start": "lwr start",
     "stage": "yarn build && yarn start",
