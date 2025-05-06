@@ -1,7 +1,0 @@
-**/*.css
-**/*.html
-**/*.json
-**/*.svg
-**/*.xml
-jest-sa11y-setup.js
-jest.config.cjs
