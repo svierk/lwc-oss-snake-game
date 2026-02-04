@@ -1,41 +1,59 @@
 {
   "bundles": {
-    "lwc|v/6_7_2": {
-      "version": "6.7.2",
-      "path": "/1/bundle/amd/l/en-US/bi/0/module/mi/lwc/v/6_7_2/s/c447f184142e6ebbe44ba55c084ee432f2d37ded/bundle_lwc.js",
+    "snake/app|v/1_0_0": {
+      "version": "1.0.0",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/snake/app/v/1_0_0/s/sha256-Hm5g_YdMQfxC25DV5NKDBxokbcvxqEkVR5DZjsAjW6w/bundle_snake_app.js",
+      "includedModules": [],
+      "imports": [
+        "lwc|v/8_20_4"
+      ],
+      "dynamicImports": [],
+      "integrity": "sha256-Hm5g/YdMQfxC25DV5NKDBxokbcvxqEkVR5DZjsAjW6w="
+    },
+    "lwc|v/8_20_4": {
+      "version": "8.20.4",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwc/v/8_20_4/s/sha256-wohSttyPv8336TX1YKQ6IC6y4_6CFXAQLrCVFCoEHSQ/bundle_lwc.js",
       "includedModules": [],
       "imports": [],
       "dynamicImports": [],
-      "integrity": "sha256-6SjQcXSpRjhYGA5WWKc8MOf1OY9YbxG/Vhpz+H+GVb0="
+      "integrity": "sha256-wohSttyPv8336TX1YKQ6IC6y4/6CFXAQLrCVFCoEHSQ="
     },
-    "snake/app|v/1_0_0": {
-      "version": "1.0.0",
-      "path": "/1/bundle/amd/l/en-US/bi/0/module/mi/snake/app/v/1_0_0/s/56a78ba3c9a5528a0a63bc6c7e51dd8dfb2f65df/bundle_snake_app.js",
-      "includedModules": [
-        "snake/game|v/1_0_0"
-      ],
+    "@lwrjs/app-service/snake/module/esm|v/0_21_5": {
+      "version": "0.21.5",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/@lwrjs/app-service/snake/module/esm/v/0_21_5/s/sha256-LbKPwb5C1MxYZel98vfrwaPhMIjtV5xvHGF0fV6004w/bundle_@lwrjs_app-service_snake_module_esm.js",
+      "includedModules": [],
       "imports": [
-        "lwc|v/6_7_2"
+        "lwr/esmLoader|v/0_21_5",
+        "@lwc/synthetic-shadow|v/8_20_4",
+        "lwr/profiler|v/0_21_5",
+        "lwc|v/8_20_4"
       ],
       "dynamicImports": [],
-      "integrity": "sha256-e2qiC+WVHy6ZbER9UkrSVlgiuMSgQVRydaauWRpPeG4="
+      "integrity": "sha256-LbKPwb5C1MxYZel98vfrwaPhMIjtV5xvHGF0fV6004w="
     },
-    "@lwrjs/app-service/snake/module/amd|v/0_14_3": {
-      "version": "0.14.3",
-      "path": "/1/bundle/amd/l/en-US/bi/0/module/mi/@lwrjs/app-service/snake/module/amd/v/0_14_3/s/e4c62cddb26e11f2403231fbfd2afbc3d3abd9c1/bundle_@lwrjs_app-service_snake_module_amd.js",
-      "includedModules": [
-        "lwr/metrics|v/0_14_3",
-        "lwr/init|v/0_14_3",
-        "@lwc/synthetic-shadow|v/6_7_2",
-        "lwr/preInit|v/0_14_3"
-      ],
-      "imports": [
-        "lwr/profiler|v/0_14_3",
-        "lwc|v/6_7_2",
-        "lwr/loader|v/0_14_3"
-      ],
+    "lwr/esmLoader|v/0_21_5": {
+      "version": "0.21.5",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwr/esmLoader/v/0_21_5/s/sha256-XZ3-fTIQeMpr-t515p72MK4vr6gSnXsH3O_YELtRaFw/bundle_lwr_esmLoader.js",
+      "includedModules": [],
+      "imports": [],
       "dynamicImports": [],
-      "integrity": "sha256-7OWQcPXc4uXbG03d1/w4wDN//TWEXOeQXyluH/0l5U4="
+      "integrity": "sha256-XZ3+fTIQeMpr+t515p72MK4vr6gSnXsH3O/YELtRaFw="
+    },
+    "@lwc/synthetic-shadow|v/8_20_4": {
+      "version": "8.20.4",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/@lwc/synthetic-shadow/v/8_20_4/s/sha256--ubVqDVmG8RVo3l-_kcO6vaaHDjCXLX-ljdmIph1yWc/bundle_@lwc_synthetic-shadow.js",
+      "includedModules": [],
+      "imports": [],
+      "dynamicImports": [],
+      "integrity": "sha256-+ubVqDVmG8RVo3l+/kcO6vaaHDjCXLX+ljdmIph1yWc="
+    },
+    "lwr/profiler|v/0_21_5": {
+      "version": "0.21.5",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwr/profiler/v/0_21_5/s/sha256-kGLXJohj797McyfBP40zJ-_7G1vXcR4obQNMGxQNgGk/bundle_lwr_profiler.js",
+      "includedModules": [],
+      "imports": [],
+      "dynamicImports": [],
+      "integrity": "sha256-kGLXJohj797McyfBP40zJ+/7G1vXcR4obQNMGxQNgGk="
     }
   }
 }

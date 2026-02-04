@@ -31,35 +31,35 @@
   },
   "dependencies": {
     "jest-environment-jsdom": "^30.2.0",
-    "lwc": "8.26.2",
-    "lwr": "0.18.3"
+    "lwc": "8.28.2",
+    "lwr": "0.21.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.28.5",
-    "@babel/eslint-parser": "^7.28.5",
+    "@babel/core": "^7.29.0",
+    "@babel/eslint-parser": "^7.28.6",
     "@lwc/eslint-plugin-lwc": "^3.3.0",
     "@lwc/jest-preset": "^19.1.2",
-    "@sa11y/jest": "8.0.0",
-    "@salesforce-ux/design-system": "^2.28.1",
+    "@sa11y/jest": "8.0.27",
+    "@salesforce-ux/design-system": "^2.29.0",
     "@salesforce/eslint-config-lwc": "^4.1.2",
     "@salesforce/eslint-plugin-lightning": "^2.0.0",
     "@salesforce/sfdx-lwc-jest": "^7.1.2",
     "eslint": "^9.39.2",
-    "eslint-plugin-compat": "^6.0.2",
+    "eslint-plugin-compat": "^6.1.0",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jest": "^29.12.0",
+    "eslint-plugin-jest": "^29.12.2",
     "husky": "^9.1.7",
     "jest": "^30.2.0",
     "lint-staged": "^16.2.7",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.1",
     "typescript": "~5.9.3"
   },
   "engines": {
-    "node": "20.x.x",
+    "node": "22.x.x",
     "npm": "10.x.x"
   },
   "volta": {
-    "node": "20.x.x"
+    "node": "22.x.x"
   },
   "lint-staged": {
     "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
@@ -67,7 +67,7 @@
     ],
     "**/*.{css,html,js}": [
       "eslint",
-      "jest"
+      "jest --passWithNoTests"
     ]
   }
 }
