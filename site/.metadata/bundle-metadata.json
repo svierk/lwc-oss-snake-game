@@ -2,13 +2,13 @@
   "bundles": {
     "snake/app|v/1_0_0": {
       "version": "1.0.0",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/snake/app/v/1_0_0/s/sha256-Hm5g_YdMQfxC25DV5NKDBxokbcvxqEkVR5DZjsAjW6w/bundle_snake_app.js",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/snake/app/v/1_0_0/s/sha256-0KXRtn54V9_MEKC86swgyHM3yMNzJ2NOEiypF74eKuk/bundle_snake_app.js",
       "includedModules": [],
       "imports": [
         "lwc|v/8_20_4"
       ],
       "dynamicImports": [],
-      "integrity": "sha256-Hm5g/YdMQfxC25DV5NKDBxokbcvxqEkVR5DZjsAjW6w="
+      "integrity": "sha256-0KXRtn54V9/MEKC86swgyHM3yMNzJ2NOEiypF74eKuk="
     },
     "lwc|v/8_20_4": {
       "version": "8.20.4",
@@ -18,26 +18,26 @@
       "dynamicImports": [],
       "integrity": "sha256-wohSttyPv8336TX1YKQ6IC6y4/6CFXAQLrCVFCoEHSQ="
     },
-    "@lwrjs/app-service/snake/module/esm|v/0_21_5": {
-      "version": "0.21.5",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/@lwrjs/app-service/snake/module/esm/v/0_21_5/s/sha256-LbKPwb5C1MxYZel98vfrwaPhMIjtV5xvHGF0fV6004w/bundle_@lwrjs_app-service_snake_module_esm.js",
+    "@lwrjs/app-service/snake/module/esm|v/0_22_10": {
+      "version": "0.22.10",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/@lwrjs/app-service/snake/module/esm/v/0_22_10/s/sha256-JI2WqQ79IB4Xpb_Y5l_6ZAywxgia5IJ-Gnjzb4GWe4g/bundle_@lwrjs_app-service_snake_module_esm.js",
       "includedModules": [],
       "imports": [
-        "lwr/esmLoader|v/0_21_5",
+        "lwr/esmLoader|v/0_22_10",
         "@lwc/synthetic-shadow|v/8_20_4",
-        "lwr/profiler|v/0_21_5",
+        "lwr/profiler|v/0_22_10",
         "lwc|v/8_20_4"
       ],
       "dynamicImports": [],
-      "integrity": "sha256-LbKPwb5C1MxYZel98vfrwaPhMIjtV5xvHGF0fV6004w="
+      "integrity": "sha256-JI2WqQ79IB4Xpb/Y5l/6ZAywxgia5IJ+Gnjzb4GWe4g="
     },
-    "lwr/esmLoader|v/0_21_5": {
-      "version": "0.21.5",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwr/esmLoader/v/0_21_5/s/sha256-XZ3-fTIQeMpr-t515p72MK4vr6gSnXsH3O_YELtRaFw/bundle_lwr_esmLoader.js",
+    "lwr/esmLoader|v/0_22_10": {
+      "version": "0.22.10",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwr/esmLoader/v/0_22_10/s/sha256-in2hntyB9eQqsF8Y6LWW1G0VG-QIuzWvg_GFJRgvE7E/bundle_lwr_esmLoader.js",
       "includedModules": [],
       "imports": [],
       "dynamicImports": [],
-      "integrity": "sha256-XZ3+fTIQeMpr+t515p72MK4vr6gSnXsH3O/YELtRaFw="
+      "integrity": "sha256-in2hntyB9eQqsF8Y6LWW1G0VG+QIuzWvg/GFJRgvE7E="
     },
     "@lwc/synthetic-shadow|v/8_20_4": {
       "version": "8.20.4",
@@ -47,9 +47,9 @@
       "dynamicImports": [],
       "integrity": "sha256-+ubVqDVmG8RVo3l+/kcO6vaaHDjCXLX+ljdmIph1yWc="
     },
-    "lwr/profiler|v/0_21_5": {
-      "version": "0.21.5",
-      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwr/profiler/v/0_21_5/s/sha256-kGLXJohj797McyfBP40zJ-_7G1vXcR4obQNMGxQNgGk/bundle_lwr_profiler.js",
+    "lwr/profiler|v/0_22_10": {
+      "version": "0.22.10",
+      "path": "/1/bundle/esm/l/en-US/bi/0/module/mi/lwr/profiler/v/0_22_10/s/sha256-kGLXJohj797McyfBP40zJ-_7G1vXcR4obQNMGxQNgGk/bundle_lwr_profiler.js",
       "includedModules": [],
       "imports": [],
       "dynamicImports": [],

@@ -14,5 +14,6 @@ module.exports = {
     }
   },
   setupFilesAfterEnv,
+  collectCoverageFrom: ['src/modules/**/*.js', '!src/modules/**/__tests__/**'],
   coverageReporters: ['clover', 'json', 'text', 'lcov', 'cobertura']
 };

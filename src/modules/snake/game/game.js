@@ -1,7 +1,7 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement } from 'lwc';
 
 export default class Game extends LightningElement {
-  @track gameBlocks = [];
+  gameBlocks = [];
 
   score = 0;
   highScore = 0;
@@ -50,43 +50,45 @@ export default class Game extends LightningElement {
     this.startGame();
   }
 
-  move() {
-    const lastElement = this.tail[this.tail.length - 1];
-    if (lastElement !== `${this.xHead}:${this.yHead}`) {
-      this.tail.push(`${this.xHead}:${this.yHead}`);
-      const removedElement = this.tail.shift();
-      const curPosIndex = this.gameBlocks.findIndex((x) => x.id === removedElement);
-      this.gameBlocks[curPosIndex].snake = false;
-      this.gameBlocks[curPosIndex].class = '';
-    }
-
+  moveHead() {
     this.xHead += this.xSpeed;
     this.yHead += this.ySpeed;
 
     if (this.xHead >= this.xMax) {
       this.xHead = 0;
     }
-
     if (this.xHead < 0) {
       this.xHead = this.xMax - 1;
     }
-
     if (this.yHead >= this.yMax) {
       this.yHead = 0;
     }
-
     if (this.yHead < 0) {
       this.yHead = this.yMax - 1;
     }
+  }
+
+  move() {
+    const blocks = [...this.gameBlocks];
+
+    const lastElement = this.tail[this.tail.length - 1];
+    if (lastElement !== `${this.xHead}:${this.yHead}`) {
+      this.tail.push(`${this.xHead}:${this.yHead}`);
+      const removedElement = this.tail.shift();
+      const curPosIndex = blocks.findIndex((x) => x.id === removedElement);
+      blocks[curPosIndex] = { ...blocks[curPosIndex], snake: false, class: '' };
+    }
+
+    this.moveHead();
 
     if (this.tail.includes(`${this.xHead}:${this.yHead}`)) {
+      this.gameBlocks = blocks;
       this.exitGame();
     } else {
-      const newPosIndex = this.gameBlocks.findIndex((x) => x.id === `${this.xHead}:${this.yHead}`);
-      this.gameBlocks[newPosIndex].snake = true;
-      this.gameBlocks[newPosIndex].class = 'snake';
+      const newPosIndex = blocks.findIndex((x) => x.id === `${this.xHead}:${this.yHead}`);
+      blocks[newPosIndex] = { ...blocks[newPosIndex], snake: true, class: 'snake' };
 
-      if (this.gameBlocks[newPosIndex].food) {
+      if (blocks[newPosIndex].food) {
         this.score++;
         if (this.score > this.highScore) {
           this.highScore = this.score;
@@ -94,8 +96,11 @@ export default class Game extends LightningElement {
         }
         this.addSpeed();
         this.tail.push(`${this.xHead}:${this.yHead}`);
-        this.gameBlocks[newPosIndex].food = false;
+        blocks[newPosIndex] = { ...blocks[newPosIndex], food: false };
+        this.gameBlocks = blocks;
         this.generateFood();
+      } else {
+        this.gameBlocks = blocks;
       }
     }
   }
@@ -133,8 +138,9 @@ export default class Game extends LightningElement {
     if (!this.tail.includes(`${xFood}:${yFood}`)) {
       const foodPosIndex = this.gameBlocks.findIndex((x) => x.id === `${xFood}:${yFood}`);
       if (this.gameBlocks[foodPosIndex]) {
-        this.gameBlocks[foodPosIndex].food = true;
-        this.gameBlocks[foodPosIndex].class = 'food';
+        const blocks = [...this.gameBlocks];
+        blocks[foodPosIndex] = { ...blocks[foodPosIndex], food: true, class: 'food' };
+        this.gameBlocks = blocks;
       }
     } else {
       this.generateFood();
