@@ -4,3 +4,10 @@ __lwr_cache__
 
 # Jest coverage and test reports
 coverage/
+
+# Yarn 4
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
