@@ -1,4 +1,4 @@
-name: build
+name: Build
 
 on:
   push:
@@ -20,6 +20,8 @@ jobs:
         uses: svierk/get-node-version@main
         with:
           package-manager: 'yarn'
+      - name: Enable Corepack
+        run: corepack enable
       - name: Install Dependencies
         uses: borales/actions-yarn@v4
         with:
