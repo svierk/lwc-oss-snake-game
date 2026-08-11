@@ -1,4 +1,9 @@
-name: Build
+name: Validation
+
+# Validates changes to this repository: checks formatting and linting, runs the
+# LWC unit tests and builds the production bundle of the LWR site. The workflow
+# needs no secrets, so pull requests from forks are validated the same way as
+# pushes to `main`.
 
 on:
   push:
@@ -7,35 +12,49 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Least-privilege token: this workflow only reads the repository.
 permissions:
   contents: read
 
 jobs:
+  # The job name is the context of the required status check on `main`
+  # (repository ruleset "main") - renaming it means updating that ruleset too.
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@v7.0.1
         with:
-          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+          persist-credentials: false # the GITHUB_TOKEN is not needed after the checkout - don't leave it in .git/config
+
+      # Has to run before the Node.js setup so that the Yarn version from
+      # package.json#packageManager is the one used for the dependency cache.
       - name: Enable Corepack
         run: corepack enable
+
+      # NODE_VERSION_OVERRIDE is a repository variable; unset it to fall back
+      # to engines.node from package.json, populate it to pin a version
+      # without touching this workflow file.
       - name: Select Node Version
-        uses: svierk/get-node-version@main
+        uses: svierk/get-node-version@v1.5.1
         with:
+          node-version: ${{ vars.NODE_VERSION_OVERRIDE }}
           package-manager: 'yarn'
+
+      # --immutable fails the build if the install would change yarn.lock
+      # instead of silently resolving to different versions than reviewed.
       - name: Install Dependencies
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install # will run `yarn install` command
+        run: yarn install --immutable
+
       - name: Check Prettier
-        run: yarn run prettier
+        run: yarn run prettier:verify
+
       - name: Check ESLint
         run: yarn run lint
+
       - name: LWC Unit Tests
         run: yarn run test:unit
+
       - name: Build Production Bundle
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build # will run `yarn build` command
+        run: yarn run build

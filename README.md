@@ -1,6 +1,6 @@
 # 🐍 LWC OSS Snake Game
 
-![GitHub CI](https://github.com/svierk/lwc-oss-snake-game/actions/workflows/ci.yml/badge.svg)
+[![Validation](https://github.com/svierk/lwc-oss-snake-game/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/svierk/lwc-oss-snake-game/actions/workflows/ci.yml)
 
 The project was born out of pure interest in using Lightning Web Components outside of the Salesforce platform.
 I was inspired to the Snake idea by the following blog article and reused some of the game code:
