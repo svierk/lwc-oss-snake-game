@@ -5,6 +5,7 @@
 __lwr_cache__
 .vscode
 coverage/
+eslint-report.json
 node_modules
 site
 src/assets

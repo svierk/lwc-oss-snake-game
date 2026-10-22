@@ -47,14 +47,31 @@ jobs:
       - name: Install Dependencies
         run: yarn install --immutable
 
-      - name: Check Prettier
-        run: yarn run prettier:verify
+      # Building block of the Salesforce DevOps Starter Kit. The Code Analyzer
+      # needs the Salesforce CLI and is switched off - this is an LWC OSS
+      # project, not an SFDX one - so only the Prettier and ESLint checks run,
+      # through the scripts in package.json.
+      - name: Code Review
+        uses: svierk/sfdx-code-review@v1.1.0
+        with:
+          code-analyzer: false
+          prettier: true
+          prettier-command: yarn run prettier:verify
+          eslint: true
+          # lint:sonar writes the JSON report the action counts errors and
+          # warnings from, but prints nothing readable - on failure, rerun with
+          # the default formatter so the findings show up in the log.
+          eslint-command: yarn run lint:sonar || yarn run lint
 
-      - name: Check ESLint
-        run: yarn run lint
-
+      # Building block of the Salesforce DevOps Starter Kit. Apex and Flow tests
+      # need an org and are switched off; the LWC tests write the lcov report
+      # the action reads the coverage for the job summary from.
       - name: LWC Unit Tests
-        run: yarn run test:unit
+        uses: svierk/sfdx-run-tests@v1.2.0
+        with:
+          apex: false
+          lwc: true
+          lwc-test-command: yarn run test:unit:coverage
 
       - name: Build Production Bundle
         run: yarn run build
