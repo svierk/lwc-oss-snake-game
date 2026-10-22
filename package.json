@@ -2,7 +2,7 @@
   "name": "lwc-oss-snake-game",
   "private": true,
   "version": "1.0.0",
-  "description": "",
+  "description": "Classic Snake on a retro mobile phone, built with Lightning Web Components (LWC OSS) and Lightning Web Runtime (LWR)",
   "author": {
     "name": "Sebastiano Schwarz",
     "url": "https://github.com/svierk"
@@ -15,8 +15,8 @@
     "dev:compat": "lwr dev --mode compat",
     "build": "lwr build --clean",
     "build:prod-compat": "lwr build --clean --mode prod-compat",
-    "lint": "eslint **/src/**/*.js",
-    "lint:sonar": "eslint -f json -o eslint-report.json **/src/**/*.js",
+    "lint": "eslint \"src/**/*.js\"",
+    "lint:sonar": "eslint -f json -o eslint-report.json \"src/**/*.js\"",
     "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\" --check",
     "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
     "postinstall": "husky",
@@ -30,38 +30,36 @@
     "test:unit:debug": "jest --debug"
   },
   "dependencies": {
-    "@lwc/compiler": "9.4.3",
-    "@lwc/engine-dom": "9.4.3",
-    "@lwc/engine-server": "9.4.3",
-    "@lwc/module-resolver": "9.4.3",
-    "@lwc/synthetic-shadow": "9.4.3",
-    "jest-environment-jsdom": "^30.5.2",
-    "lwc": "9.4.3",
-    "lwr": "0.24.1"
+    "@lwc/compiler": "9.5.1",
+    "@lwc/module-resolver": "9.5.1",
+    "lwc": "9.5.1",
+    "lwr": "0.24.3"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
     "@babel/eslint-parser": "^7.29.9",
+    "@lwc/engine-dom": "9.5.1",
+    "@lwc/engine-server": "9.5.1",
     "@lwc/eslint-plugin-lwc": "^3.5.0",
     "@lwc/jest-preset": "^19.6.1",
-    "@sa11y/jest": "8.1.1",
-    "@salesforce-ux/design-system": "2.264.1",
+    "@lwc/synthetic-shadow": "9.5.1",
+    "@sa11y/jest": "8.2.0",
     "@salesforce/eslint-config-lwc": "^4.1.2",
     "@salesforce/eslint-plugin-lightning": "^2.0.0",
-    "@salesforce/sfdx-lwc-jest": "7.9.0",
     "eslint": "^9.39.5",
     "eslint-plugin-compat": "^7.0.2",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jest": "^29.16.6",
+    "eslint-plugin-jest": "^29.17.0",
+    "globals": "^17.13.0",
     "husky": "^9.1.7",
     "jest": "^30.5.2",
-    "lint-staged": "^17.5.1",
-    "prettier": "^3.9.9",
-    "typescript": "~6.0.2"
+    "jest-environment-jsdom": "^30.5.2",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0.3"
   },
   "engines": {
-    "node": "24.x.x",
-    "npm": "11.x.x"
+    "node": "24.x.x"
   },
   "volta": {
     "node": "24.x.x"
@@ -75,5 +73,5 @@
       "jest --passWithNoTests"
     ]
   },
-  "packageManager": "yarn@4.14.1"
+  "packageManager": "yarn@4.18.1"
 }
