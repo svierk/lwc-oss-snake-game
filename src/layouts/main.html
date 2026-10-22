@@ -3,26 +3,43 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="The classic Snake game on a retro mobile phone, built with Lightning Web Components."
+    />
+    <meta name="theme-color" content="#0d1018" />
     <title>Snake Game | LWC OSS</title>
     <link rel="icon" type="image/x-icon" href="$assetsDir/favicon.ico" />
-    <link rel="stylesheet" href="$assetsDir/styles/salesforce-lightning-design-system.css" />
+    <link rel="preload" href="/assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
     <style>
-      html {
-        background: #000;
+      /* Fonts have to be declared in the document - @font-face is not picked up inside shadow roots. */
+      @font-face {
+        font-family: 'VT323';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('/assets/fonts/vt323-latin-400-normal.woff2') format('woff2');
       }
 
-      @media only screen and (min-width: 768px) {
-        html {
-          background-position-x: 45%;
-          background-position-y: 36%;
-          background-image: url('assets/mobile-phone.svg');
-          background-repeat: no-repeat;
-          background-size: 85%;
-        }
+      html {
+        color-scheme: dark;
+        background: #0d1018;
+        overscroll-behavior: none;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        background:
+          radial-gradient(ellipse at 50% 30%, rgb(91 143 214 / 18%), transparent 60%),
+          radial-gradient(circle at 50% 120%, #1b2233, #0d1018 70%);
+        background-attachment: fixed;
       }
     </style>
   </head>
   <body>
     {{{body}}} {{{lwr_resources}}}
+    <noscript>Please enable JavaScript to play Snake.</noscript>
   </body>
 </html>

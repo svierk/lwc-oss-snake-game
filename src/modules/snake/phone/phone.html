@@ -1,0 +1,112 @@
+<template>
+  <div class="phone">
+    <div class="earpiece" aria-hidden="true"></div>
+
+    <div class="bezel">
+      <p class="brand" aria-hidden="true">LWC</p>
+      <div class="screen">
+        <slot></slot>
+      </div>
+    </div>
+
+    <div class="nav" role="group" aria-label="Navigation keys">
+      <div class="dpad-ring" aria-hidden="true"></div>
+      <button
+        class={keyClass.softLeft}
+        data-key="softLeft"
+        aria-label="Left soft key"
+        onpointerdown={handlePointerDown}
+        onclick={handleClick}
+      ></button>
+      <button
+        class={keyClass.softRight}
+        data-key="softRight"
+        aria-label="Right soft key"
+        onpointerdown={handlePointerDown}
+        onclick={handleClick}
+      ></button>
+      <button class={keyClass.up} data-key="up" aria-label="Up" onpointerdown={handlePointerDown} onclick={handleClick}>
+        <span class="arrow" aria-hidden="true"></span>
+      </button>
+      <button
+        class={keyClass.left}
+        data-key="left"
+        aria-label="Left"
+        onpointerdown={handlePointerDown}
+        onclick={handleClick}
+      >
+        <span class="arrow" aria-hidden="true"></span>
+      </button>
+      <button
+        class={keyClass.select}
+        data-key="select"
+        aria-label="Select"
+        onpointerdown={handlePointerDown}
+        onclick={handleClick}
+      >
+        <span class="select-inner" aria-hidden="true"></span>
+      </button>
+      <button
+        class={keyClass.right}
+        data-key="right"
+        aria-label="Right"
+        onpointerdown={handlePointerDown}
+        onclick={handleClick}
+      >
+        <span class="arrow" aria-hidden="true"></span>
+      </button>
+      <button
+        class={keyClass.down}
+        data-key="down"
+        aria-label="Down"
+        onpointerdown={handlePointerDown}
+        onclick={handleClick}
+      >
+        <span class="arrow" aria-hidden="true"></span>
+      </button>
+      <button
+        class={keyClass.call}
+        data-key="call"
+        aria-label="Call"
+        onpointerdown={handlePointerDown}
+        onclick={handleClick}
+      >
+        <svg class="handset" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"
+          ></path>
+        </svg>
+      </button>
+      <button
+        class={keyClass.end}
+        data-key="end"
+        aria-label="End"
+        onpointerdown={handlePointerDown}
+        onclick={handleClick}
+      >
+        <svg class="handset" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="keypad" role="group" aria-label="Number keys">
+      <template for:each={digitKeys} for:item="key">
+        <button
+          key={key.id}
+          class={key.className}
+          data-key={key.id}
+          onpointerdown={handlePointerDown}
+          onclick={handleClick}
+        >
+          <span class="digit">{key.label}</span>
+          <span class="letters" aria-hidden="true">{key.letters}</span>
+        </button>
+      </template>
+    </div>
+
+    <div class="microphone" aria-hidden="true"></div>
+  </div>
+</template>

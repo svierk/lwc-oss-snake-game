@@ -1,32 +1,43 @@
 <template>
-  <div class="header slds-var-p-around_x-small">
-    <div class="slds-grid">
-      <div class="slds-col slds-size_1-of-3">Score: {score}</div>
-      <div class="slds-col slds-size_1-of-3 slds-text-align_center">Speed: {displaySpeed}x</div>
-      <div class="slds-col slds-size_1-of-3 slds-text-align_right">High Score: {highScore}</div>
+  <div class={lcdClass}>
+    <div class="status-bar" aria-hidden="true">
+      <span class="score">{score}</span>
+      <span class="speed">x{displaySpeed}</span>
+      <span class="high-score">HI {highScoreLabel}</span>
     </div>
-  </div>
-  <div class="game-container">
-    <div class="game-play">
-      <template for:each={gameBlocks} for:item="block">
-        <div class={block.class} data-reference={block.id} key={block.id}>&nbsp;</div>
+    <div
+      class="field"
+      aria-hidden="true"
+      onpointerdown={handlePointerDown}
+      onpointerup={handlePointerUp}
+      onpointercancel={handlePointerCancel}
+    >
+      <template for:each={segments} for:item="segment">
+        <div key={segment.key} class={segment.className} style={segment.style}></div>
       </template>
-    </div>
-    <template if:true={showOverlay}>
-      <div class="overlay">
-        <div class="overlay-content">
-          <template if:true={gameOver}>
-            <div class="slds-text-heading_large">Game Over!</div>
-            <br />
-            <button class="slds-button slds-button_brand" onclick={resetGame}>Play Again</button>
+      <template lwc:if={food}>
+        <div class="cell food" style={food.style}></div>
+      </template>
+      <template lwc:if={message}>
+        <div class="message">
+          <p class="message-title">{message.title}</p>
+          <template lwc:if={isGameOver}>
+            <p class="message-score">
+              Score {state.score}<template lwc:if={newHighScore}> &middot; New record!</template>
+            </p>
           </template>
-          <template if:false={gameOver}>
-            <div class="slds-text-heading_medium">Use Arrow Keys to move the snake</div>
-            <br />
-            <button class="slds-button slds-button_brand" onclick={startGame}>Start Game</button>
+          <p class="message-text">{message.text}</p>
+          <template lwc:if={message.hint}>
+            <p class="message-hint">{message.hint}</p>
           </template>
         </div>
-      </div>
-    </template>
+      </template>
+    </div>
+    <div class="soft-labels" aria-hidden="true">
+      <span>{selectLabel}</span>
+      <span>{backLabel}</span>
+    </div>
+    <p class="assistive-text" aria-live="polite">{announcement}</p>
+    <p class="assistive-text">Score {state.score}, high score {highScore}</p>
   </div>
 </template>

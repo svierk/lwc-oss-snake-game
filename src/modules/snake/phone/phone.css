@@ -1,0 +1,471 @@
+/*
+ * The whole phone is drawn in multiples of one unit (--u), which is derived
+ * from the viewport. Scaling the unit scales the phone as a single piece, the
+ * same way the former background image did, but every part stays crisp.
+ * Portrait: the phone is ~100u wide and ~192u tall.
+ */
+:host {
+  --u: min(5px, 0.94vw, calc((100dvh - 2rem) / 192));
+  --metal-edge: #28324c;
+  --metal-dark: #8d9ebe;
+  --metal-mid: #b2bdce;
+  --metal-light: #dce1eb;
+  --metal-shine: #fdfeff;
+  --key-face: linear-gradient(180deg, #fbfcfe 0%, #e3e8ef 55%, #c3ccd8 100%);
+  --key-shadow: #6f7b8e;
+  --soft-blue: #5b8fd6;
+  --call-green: #1e9a3c;
+  --end-red: #d02828;
+  --ink: #1b2330;
+
+  display: block;
+}
+
+.phone {
+  position: relative;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas: 'earpiece' 'bezel' 'nav' 'keypad' 'microphone';
+  row-gap: calc(4 * var(--u));
+  width: calc(100 * var(--u));
+  padding: calc(5 * var(--u)) calc(6 * var(--u)) calc(4 * var(--u));
+  border-radius: calc(17 * var(--u)) / calc(22 * var(--u));
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 35%), transparent 18%, transparent 82%, rgb(0 0 0 / 18%)),
+    linear-gradient(
+      90deg,
+      var(--metal-edge) 0%,
+      var(--metal-dark) 3%,
+      var(--metal-light) 10%,
+      var(--metal-shine) 28%,
+      #f1f3f6 50%,
+      #d0d7df 74%,
+      var(--metal-mid) 90%,
+      var(--metal-dark) 96%,
+      var(--metal-edge) 100%
+    );
+  box-shadow:
+    0 calc(3 * var(--u)) calc(8 * var(--u)) rgb(0 0 0 / 55%),
+    0 calc(0.6 * var(--u)) calc(1.2 * var(--u)) rgb(0 0 0 / 45%),
+    inset 0 calc(0.5 * var(--u)) calc(0.8 * var(--u)) rgb(255 255 255 / 85%),
+    inset 0 calc(-0.8 * var(--u)) calc(1.4 * var(--u)) rgb(0 0 0 / 30%);
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Earpiece and microphone slots */
+
+.earpiece,
+.microphone {
+  justify-self: center;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #11151c, #3a4352);
+  box-shadow:
+    inset 0 calc(0.3 * var(--u)) calc(0.4 * var(--u)) rgb(0 0 0 / 80%),
+    0 calc(0.2 * var(--u)) 0 rgb(255 255 255 / 70%);
+}
+
+.earpiece {
+  grid-area: earpiece;
+  width: calc(24 * var(--u));
+  height: calc(2 * var(--u));
+}
+
+.microphone {
+  grid-area: microphone;
+  width: calc(8 * var(--u));
+  height: calc(1.2 * var(--u));
+}
+
+/* Screen bezel */
+
+.bezel {
+  grid-area: bezel;
+  padding: calc(2 * var(--u)) calc(4 * var(--u)) calc(4.5 * var(--u));
+  border-radius: calc(6 * var(--u)) calc(6 * var(--u)) calc(12 * var(--u)) calc(12 * var(--u)) / calc(6 * var(--u))
+    calc(6 * var(--u)) calc(7 * var(--u)) calc(7 * var(--u));
+  background: linear-gradient(180deg, #2a2f38 0%, #121419 30%, #0b0c0f 100%);
+  box-shadow:
+    inset 0 calc(0.3 * var(--u)) calc(0.5 * var(--u)) rgb(255 255 255 / 18%),
+    0 calc(0.4 * var(--u)) calc(0.6 * var(--u)) rgb(255 255 255 / 60%);
+}
+
+.brand {
+  margin: 0 0 calc(1.5 * var(--u));
+  font-size: calc(3.2 * var(--u));
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.35em;
+  text-align: center;
+  text-indent: 0.35em;
+  color: #c9d2de;
+}
+
+.screen {
+  font-size: calc(4.6 * var(--u));
+}
+
+/* Navigation cluster: soft keys, d-pad with select key, call and end keys */
+
+.nav {
+  position: relative;
+  display: grid;
+  grid-template-columns: 22fr 12fr 16fr 12fr 22fr;
+  grid-template-rows: repeat(3, calc(11 * var(--u)));
+  grid-template-areas:
+    'soft-left . up . soft-right'
+    'call left select right end'
+    'call . down . end';
+  gap: calc(1 * var(--u));
+}
+
+.dpad-ring {
+  grid-area: 1 / 2 / 4 / 5;
+  align-self: center;
+  justify-self: center;
+  width: calc(36 * var(--u));
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, #4a5465 0%, #232933 55%, #0f1217 100%);
+  box-shadow:
+    0 calc(0.4 * var(--u)) calc(0.6 * var(--u)) rgb(255 255 255 / 75%),
+    inset 0 calc(0.5 * var(--u)) calc(1 * var(--u)) rgb(255 255 255 / 25%),
+    inset 0 calc(-0.6 * var(--u)) calc(1.2 * var(--u)) rgb(0 0 0 / 60%);
+}
+
+/* Keys */
+
+.key {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--ink);
+  font: inherit;
+  background: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 60ms ease-out,
+    box-shadow 60ms ease-out,
+    filter 60ms ease-out;
+}
+
+.key:focus {
+  outline: none;
+}
+
+.key:focus-visible {
+  outline: calc(0.7 * var(--u)) solid var(--soft-blue);
+  outline-offset: calc(0.4 * var(--u));
+}
+
+.key-soft-left,
+.key-soft-right,
+.key-call,
+.key-end,
+.key-select,
+.key-digit {
+  background: var(--key-face);
+  box-shadow:
+    0 calc(0.7 * var(--u)) 0 var(--key-shadow),
+    0 calc(1 * var(--u)) calc(1.6 * var(--u)) rgb(0 0 0 / 35%),
+    inset 0 calc(0.3 * var(--u)) calc(0.3 * var(--u)) #fff;
+}
+
+.key:active,
+.key.pressed {
+  transform: translateY(calc(0.5 * var(--u)));
+  filter: brightness(0.93);
+}
+
+.key-soft-left:active,
+.key-soft-left.pressed,
+.key-soft-right:active,
+.key-soft-right.pressed,
+.key-call:active,
+.key-call.pressed,
+.key-end:active,
+.key-end.pressed,
+.key-select:active,
+.key-select.pressed,
+.key-digit:active,
+.key-digit.pressed {
+  box-shadow:
+    0 calc(0.2 * var(--u)) 0 var(--key-shadow),
+    0 calc(0.3 * var(--u)) calc(0.6 * var(--u)) rgb(0 0 0 / 35%),
+    inset 0 calc(0.3 * var(--u)) calc(0.3 * var(--u)) #fff;
+}
+
+.key-soft-left,
+.key-soft-right {
+  align-self: center;
+  height: calc(8 * var(--u));
+  border-radius: calc(4 * var(--u));
+}
+
+.key-soft-left {
+  grid-area: soft-left;
+  border-top-left-radius: calc(6 * var(--u));
+}
+
+.key-soft-right {
+  grid-area: soft-right;
+  border-top-right-radius: calc(6 * var(--u));
+}
+
+.key-soft-left::before,
+.key-soft-right::before {
+  content: '';
+  width: 55%;
+  height: calc(1.4 * var(--u));
+  border-radius: 999px;
+  background: var(--soft-blue);
+  box-shadow: inset 0 calc(0.2 * var(--u)) calc(0.2 * var(--u)) rgb(255 255 255 / 45%);
+}
+
+.key-soft-left::before {
+  transform: rotate(4deg);
+}
+
+.key-soft-right::before {
+  transform: rotate(-4deg);
+}
+
+.key-call,
+.key-end {
+  margin-block: calc(2 * var(--u)) calc(1 * var(--u));
+  border-radius: calc(4 * var(--u));
+}
+
+.key-call {
+  grid-area: call;
+  border-bottom-left-radius: calc(9 * var(--u));
+}
+
+.key-end {
+  grid-area: end;
+  border-bottom-right-radius: calc(9 * var(--u));
+}
+
+.handset {
+  width: calc(8 * var(--u));
+  height: calc(8 * var(--u));
+}
+
+.key-call .handset {
+  fill: var(--call-green);
+}
+
+.key-end .handset {
+  fill: var(--end-red);
+  transform: rotate(135deg);
+}
+
+.key-up {
+  grid-area: up;
+}
+
+.key-down {
+  grid-area: down;
+}
+
+.key-left {
+  grid-area: left;
+}
+
+.key-right {
+  grid-area: right;
+}
+
+.key-up:active,
+.key-up.pressed,
+.key-down:active,
+.key-down.pressed,
+.key-left:active,
+.key-left.pressed,
+.key-right:active,
+.key-right.pressed {
+  transform: scale(0.9);
+  filter: brightness(1.4);
+}
+
+.arrow {
+  width: calc(4.4 * var(--u));
+  height: calc(3.2 * var(--u));
+  background: #c9d2de;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.key-down .arrow {
+  transform: rotate(180deg);
+}
+
+.key-left .arrow {
+  transform: rotate(-90deg);
+}
+
+.key-right .arrow {
+  transform: rotate(90deg);
+}
+
+.key-select {
+  grid-area: select;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  height: calc(11 * var(--u));
+  border-radius: calc(3.5 * var(--u));
+  background: linear-gradient(135deg, #ffffff 0%, #e9edf2 45%, #b9c3cf 100%);
+}
+
+.select-inner {
+  width: calc(5 * var(--u));
+  height: calc(4.4 * var(--u));
+  border-radius: calc(0.8 * var(--u));
+  background: linear-gradient(135deg, #5b6b80 0%, #0e2238 45%, #9fb1c6 100%);
+}
+
+/* Number keypad */
+
+.keypad {
+  grid-area: keypad;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: calc(10.5 * var(--u));
+  gap: calc(2.5 * var(--u)) calc(3 * var(--u));
+}
+
+.key-digit {
+  gap: calc(1.2 * var(--u));
+  align-items: baseline;
+  padding-top: calc(1.6 * var(--u));
+  border-radius: calc(4.5 * var(--u)) / calc(5 * var(--u));
+}
+
+.digit {
+  font-size: calc(5.2 * var(--u));
+  font-weight: 700;
+  line-height: 1;
+}
+
+.letters {
+  min-width: calc(5 * var(--u));
+  font-size: calc(2.5 * var(--u));
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-align: left;
+  text-transform: lowercase;
+  color: #4a5668;
+}
+
+/*
+ * Landscape on small screens (phones held sideways): the phone turns into a
+ * wide device with the screen on the left and the keys on the right, so the
+ * display stays large. ~210u wide and ~100u tall.
+ */
+@media (orientation: landscape) and (max-height: 560px) {
+  :host {
+    --u: min(5px, calc((100vw - 2rem) / 210), calc((100dvh - 1rem) / 100));
+  }
+
+  .phone {
+    grid-template-columns: calc(112 * var(--u)) calc(78 * var(--u));
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'bezel nav'
+      'bezel keypad';
+    column-gap: calc(6 * var(--u));
+    row-gap: calc(4 * var(--u));
+    width: auto;
+    padding: calc(5 * var(--u)) calc(7 * var(--u));
+    border-radius: calc(20 * var(--u)) / calc(17 * var(--u));
+    background:
+      linear-gradient(90deg, rgb(255 255 255 / 30%), transparent 12%, transparent 88%, rgb(0 0 0 / 18%)),
+      linear-gradient(
+        180deg,
+        var(--metal-edge) 0%,
+        var(--metal-dark) 4%,
+        var(--metal-light) 14%,
+        var(--metal-shine) 32%,
+        #f1f3f6 50%,
+        #d0d7df 72%,
+        var(--metal-mid) 88%,
+        var(--metal-dark) 95%,
+        var(--metal-edge) 100%
+      );
+  }
+
+  .earpiece,
+  .microphone {
+    position: absolute;
+    top: 50%;
+    width: calc(1.6 * var(--u));
+    transform: translateY(-50%);
+  }
+
+  .earpiece {
+    left: calc(2.4 * var(--u));
+    height: calc(22 * var(--u));
+  }
+
+  .microphone {
+    right: calc(2.4 * var(--u));
+    height: calc(8 * var(--u));
+  }
+
+  .bezel {
+    align-self: center;
+  }
+
+  .nav {
+    grid-template-columns: 18fr 11fr 14fr 11fr 18fr;
+    grid-template-rows: repeat(3, calc(10 * var(--u)));
+  }
+
+  .dpad-ring {
+    width: calc(33 * var(--u));
+  }
+
+  .key-select {
+    height: calc(10 * var(--u));
+  }
+
+  .keypad {
+    grid-auto-rows: calc(8.5 * var(--u));
+    gap: calc(2 * var(--u)) calc(2.5 * var(--u));
+  }
+
+  .key-digit {
+    padding-top: calc(1.2 * var(--u));
+  }
+
+  .digit {
+    font-size: calc(4.4 * var(--u));
+  }
+
+  .letters {
+    font-size: calc(2.2 * var(--u));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .key {
+    transition: none;
+  }
+}
