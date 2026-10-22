@@ -1,14 +1,11 @@
 {
-  "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }, { "npm": "lightning-base-components" }] },
+  "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
   "routes": [
     {
       "id": "snake",
       "path": "/",
       "rootComponent": "snake/app",
-      "layoutTemplate": "$layoutsDir/main.html",
-      "bootstrap": {
-        "syntheticShadow": true
-      }
+      "layoutTemplate": "$layoutsDir/main.html"
     }
   ],
   "assets": [
@@ -16,10 +13,6 @@
       "alias": "assetsDir",
       "dir": "$rootDir/src/assets",
       "urlPath": "/assets"
-    },
-    {
-      "dir": "$rootDir/src/assets/fonts",
-      "urlPath": "/fonts"
     },
     {
       "alias": "favicon",
