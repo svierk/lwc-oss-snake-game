@@ -43,6 +43,7 @@ src/
   │   └── main.html        // html document, global styles and @font-face
   └── modules/snake/
       ├── app/             // root component: wires keyboard + phone keys to the game
+      ├── embedding/       // bridge to a Salesforce page that frames the game (no LWC)
       ├── engine/          // pure game logic (no DOM, no timers) - easy to unit test
       ├── game/            // the LCD: game loop, rendering, swipe input, high score
       └── phone/           // the retro phone hardware: body, bezel and keys
@@ -93,6 +94,52 @@ server-side route. The components use native shadow DOM.
   ]
 }
 ```
+
+## Embedding in Salesforce
+
+The game can run as an externally hosted microfrontend on a Lightning page: a host LWC frames it with
+`<lightning-ui-embedding>`. The [Polyglot Arcade](https://github.com/svierk/polyglot-arcade) does that with this
+Vercel deployment and saves every finished round as a score record.
+
+LWR cannot resolve the `@salesforce/platform-sdk` package, so `snake/embedding` implements the guest side of the
+[package-free bridge](https://developer.salesforce.com/docs/platform/microfrontend/guide/package-free-bridge.html)
+directly. It only becomes active when the page is framed and its URL carries the `hostMetaData` parameter that
+`<lightning-ui-embedding>` appends - opened on its own, the game behaves exactly as before.
+
+```
+host LWC (Salesforce)                         Snake (this site, in an iframe)
+    │  iframe src ...?hostMetaData={hostAppOrigin, instanceId}
+    │ ◄──────────────────── sf-embedding/ready (window message to hostAppOrigin only)
+    │ ── sf-embedding.bootstrap + MessagePort ────────► checked: origin, parent, instanceId, one port
+    │                       JSON-RPC 2.0 over the port
+    │ ── ui/notifications/host-initialized ───────────►
+    │ ◄──────────────── ui/notifications/embedding-initialized
+    │ ◄──────────────── ui/subscribe/ui-state            (host props, unused by the game so far)
+    │ ◄──────────────── ui/notifications/resize          (height of the game)
+    │ ◄──────────────── ui/events/dispatch  gameover
+```
+
+When a round ends (game over or won) the game sends a `gameover` event to the host:
+
+```js
+{ gameKey: 'snake', gameName: 'Snake', score: 12, level: 3, durationSeconds: 41 }
+```
+
+`level` goes up every five pieces of food (each half step of speed), `durationSeconds` counts the time played without
+pauses. The game has no Salesforce session of its own - saving the score is up to the host.
+
+Embedded, the phone is sized by the width of the frame and the landscape layout is not used: the host sets the height
+of the frame from the reported height of the game, so a size that follows the frame's height would never grow.
+
+To embed the game in your own org:
+
+- Add `https://lwc-oss-snake-game.vercel.app` as a CSP Trusted Site with the _frame-src_ directive. Vercel sends no
+  `X-Frame-Options` or `frame-ancestors` header, so the page may be framed.
+- Point the `src` of `<lightning-ui-embedding>` at the site root and handle the event declaratively, e.g.
+  `<lightning-ui-embedding src={snakeUrl} ongameover={handleGameOver}>`.
+- To test changes before they are deployed, run `yarn dev`, trust `http://localhost:3000` the same way and point the
+  host at it. Chrome's Local Network Access checks can block a public site from framing `localhost`; if the frame
+  stays empty, allow local network access for the org's domain in the site settings.
 
 ## Running Linter, Prettier and Tests
 

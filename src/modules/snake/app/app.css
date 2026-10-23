@@ -10,6 +10,11 @@
   box-sizing: border-box;
 }
 
+/* The host sizes the frame to the reported height, so the stage must not depend on it. */
+.stage.embedded {
+  min-height: 0;
+}
+
 .assistive-text {
   position: absolute;
   width: 1px;
@@ -23,7 +28,7 @@
 }
 
 @media (orientation: landscape) and (max-height: 560px) {
-  .stage {
+  .stage:not(.embedded) {
     padding: 0.5rem 1rem;
   }
 }

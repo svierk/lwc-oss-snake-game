@@ -1,5 +1,8 @@
 import { createElement } from 'lwc';
-import App from 'snake/app';
+import App, { GAME_KEY, GAME_NAME } from 'snake/app';
+import { connectToHost } from 'snake/embedding';
+
+jest.mock('snake/embedding', () => ({ connectToHost: jest.fn(() => null) }));
 
 function createApp() {
   const element = createElement('snake-app', { is: App });
@@ -101,5 +104,43 @@ describe('snake-app', () => {
     keyDown('ArrowUp');
     await flush();
     expect(phone.activeKey).toBeUndefined();
+  });
+
+  describe('standalone', () => {
+    it('fills the viewport and keeps the end of a round to itself', () => {
+      const { element, phone, game } = createApp();
+      expect(connectToHost).toHaveBeenCalledWith({ target: element });
+      expect(element.shadowRoot.querySelector('main').className).toBe('stage');
+      expect(phone.className).toBe('');
+      expect(() => game.dispatchEvent(new CustomEvent('gameover', { detail: { score: 1 } }))).not.toThrow();
+    });
+  });
+
+  describe('embedded in a Salesforce page', () => {
+    let host;
+
+    beforeEach(() => {
+      host = { dispatch: jest.fn(), dispose: jest.fn() };
+      connectToHost.mockReturnValueOnce(host);
+    });
+
+    it('sizes the phone by the width of the frame', () => {
+      const { element, phone } = createApp();
+      expect(element.shadowRoot.querySelector('main').className).toBe('stage embedded');
+      expect(phone.className).toBe('embedded');
+    });
+
+    it('sends the end of a round to the host, which saves the score', () => {
+      const { game } = createApp();
+      const detail = { score: 12, level: 3, durationSeconds: 41 };
+      game.dispatchEvent(new CustomEvent('gameover', { detail }));
+      expect(host.dispatch).toHaveBeenCalledWith('gameover', { gameKey: GAME_KEY, gameName: GAME_NAME, ...detail });
+    });
+
+    it('closes the session when removed', () => {
+      const { element } = createApp();
+      document.body.removeChild(element);
+      expect(host.dispose).toHaveBeenCalled();
+    });
   });
 });

@@ -1,8 +1,9 @@
 import { LightningElement, api } from 'lwc';
-import { createGame, step, tickDelay, turn, withStatus, DIRECTIONS, STATUS } from 'snake/engine';
+import { createGame, levelFor, step, tickDelay, turn, withStatus, DIRECTIONS, STATUS } from 'snake/engine';
 
 export const HIGH_SCORE_KEY = 'lwc_snake_highscore';
 const SWIPE_THRESHOLD_PX = 24;
+const ROUND_OVER = new Set([STATUS.OVER, STATUS.WON]);
 
 const MESSAGES = {
   [STATUS.READY]: { title: 'SNAKE', text: 'Press 5 to start', hint: 'Steer with 2 4 6 8 or swipe' },
@@ -40,7 +41,8 @@ function writeHighScore(value) {
 
 /**
  * The LCD of the phone: owns the game loop, renders the engine state and
- * reacts to the abstract actions up/down/left/right/select/back.
+ * reacts to the abstract actions up/down/left/right/select/back. When a round
+ * ends it fires `gameover` with { score, level, durationSeconds }.
  */
 export default class Game extends LightningElement {
   state = createGame();
@@ -50,6 +52,8 @@ export default class Game extends LightningElement {
 
   timer;
   pointerStart;
+  playedMs = 0;
+  playStartedAt;
   handleVisibilityChange = () => {
     if (document.hidden && this.state.status === STATUS.PLAYING) {
       this.setState(withStatus(this.state, STATUS.PAUSED));
@@ -125,9 +129,33 @@ export default class Game extends LightningElement {
       writeHighScore(next.score);
     }
     if (next.status !== previous.status) {
+      this.trackPlayTime(previous.status, next.status);
       this.announce();
+      if (ROUND_OVER.has(next.status)) {
+        this.reportRoundOver();
+      }
     }
     this.scheduleTick();
+  }
+
+  /** Counts the time spent playing; pauses do not count, a new round starts at zero. */
+  trackPlayTime(previous, next) {
+    const now = Date.now();
+    if (previous === STATUS.PLAYING) {
+      this.playedMs += now - this.playStartedAt;
+    }
+    if (ROUND_OVER.has(previous) || next === STATUS.READY) {
+      this.playedMs = 0;
+    }
+    if (next === STATUS.PLAYING) {
+      this.playStartedAt = now;
+    }
+  }
+
+  reportRoundOver() {
+    const { score } = this.state;
+    const detail = { score, level: levelFor(score), durationSeconds: Math.round(this.playedMs / 1000) };
+    this.dispatchEvent(new CustomEvent('gameover', { detail }));
   }
 
   scheduleTick() {

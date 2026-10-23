@@ -1,4 +1,9 @@
 import { LightningElement } from 'lwc';
+import { connectToHost } from 'snake/embedding';
+
+/** Identify the game in the `gameover` event sent to a Salesforce host page. */
+export const GAME_KEY = 'snake';
+export const GAME_NAME = 'Snake';
 
 /** What each key of the phone does in the game - like on the original, 2/4/6/8 steer and 5 selects. */
 export const KEY_ACTIONS = {
@@ -42,6 +47,8 @@ const NON_REPEATING_ACTIONS = new Set(['select', 'back']);
 
 export default class App extends LightningElement {
   activeKey;
+  /** Session with a Salesforce page that frames the game; null when it runs standalone. */
+  host = null;
 
   handleKeyDown = (event) => {
     const key = this.phoneKeyFor(event);
@@ -63,12 +70,28 @@ export default class App extends LightningElement {
     window.addEventListener('keydown', this.handleKeyDown);
     window.addEventListener('keyup', this.handleKeyUp);
     window.addEventListener('blur', this.handleKeyUp);
+    this.host = connectToHost({ target: this.template.host });
   }
 
   disconnectedCallback() {
     window.removeEventListener('keydown', this.handleKeyDown);
     window.removeEventListener('keyup', this.handleKeyUp);
     window.removeEventListener('blur', this.handleKeyUp);
+    this.host?.dispose();
+    this.host = null;
+  }
+
+  /** Embedded, the phone is sized by the width of the frame and the frame by the phone. */
+  get embedded() {
+    return Boolean(this.host);
+  }
+
+  get stageClass() {
+    return this.embedded ? 'stage embedded' : 'stage';
+  }
+
+  get phoneClass() {
+    return this.embedded ? 'embedded' : '';
   }
 
   phoneKeyFor(event) {
@@ -86,6 +109,11 @@ export default class App extends LightningElement {
 
   handlePhoneKey(event) {
     this.pressKey(event.detail.key);
+  }
+
+  /** The host saves the score - the game itself has no Salesforce session. */
+  handleGameOver(event) {
+    this.host?.dispatch('gameover', { gameKey: GAME_KEY, gameName: GAME_NAME, ...event.detail });
   }
 
   pressKey(key) {
