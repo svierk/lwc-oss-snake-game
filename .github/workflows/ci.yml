@@ -28,19 +28,15 @@ jobs:
         with:
           persist-credentials: false # the GITHUB_TOKEN is not needed after the checkout - don't leave it in .git/config
 
-      # Has to run before the Node.js setup so that the Yarn version from
-      # package.json#packageManager is the one used for the dependency cache.
-      - name: Enable Corepack
-        run: corepack enable
-
       # NODE_VERSION_OVERRIDE is a repository variable; unset it to fall back
       # to engines.node from package.json, populate it to pin a version
-      # without touching this workflow file.
+      # without touching this workflow file. The action detects Yarn from
+      # package.json#packageManager and enables Corepack before the Node.js
+      # setup, so that this Yarn version is used for the dependency cache.
       - name: Select Node Version
-        uses: svierk/get-node-version@v1.5.2
+        uses: svierk/get-node-version@v1.6.0
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE }}
-          package-manager: 'yarn'
 
       # --immutable fails the build if the install would change yarn.lock
       # instead of silently resolving to different versions than reviewed.
