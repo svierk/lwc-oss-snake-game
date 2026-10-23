@@ -3,6 +3,10 @@
  * from the viewport. Scaling the unit scales the phone as a single piece, the
  * same way the former background image did, but every part stays crisp.
  * Portrait: the phone is ~100u wide and ~192u tall.
+ *
+ * Embedded in a Salesforce page the frame grows with the reported height of
+ * the game, so the unit only follows the width there and the landscape layout
+ * below is not used - either would make the size depend on the frame's start.
  */
 :host {
   --u: min(5px, 0.94vw, calc((100dvh - 2rem) / 192));
@@ -19,6 +23,10 @@
   --ink: #1b2330;
 
   display: block;
+}
+
+:host(.embedded) {
+  --u: min(5px, 0.94vw);
 }
 
 .phone {
@@ -375,16 +383,16 @@
 }
 
 /*
- * Landscape on small screens (phones held sideways): the phone turns into a
+ * Landscape on small screens (phones held sideways, standalone only): the phone turns into a
  * wide device with the screen on the left and the keys on the right, so the
  * display stays large. ~210u wide and ~100u tall.
  */
 @media (orientation: landscape) and (max-height: 560px) {
-  :host {
+  :host(:not(.embedded)) {
     --u: min(5px, calc((100vw - 2rem) / 210), calc((100dvh - 1rem) / 100));
   }
 
-  .phone {
+  :host(:not(.embedded)) .phone {
     grid-template-columns: calc(112 * var(--u)) calc(78 * var(--u));
     grid-template-rows: auto 1fr;
     grid-template-areas:
@@ -411,55 +419,55 @@
       );
   }
 
-  .earpiece,
-  .microphone {
+  :host(:not(.embedded)) .earpiece,
+  :host(:not(.embedded)) .microphone {
     position: absolute;
     top: 50%;
     width: calc(1.6 * var(--u));
     transform: translateY(-50%);
   }
 
-  .earpiece {
+  :host(:not(.embedded)) .earpiece {
     left: calc(2.4 * var(--u));
     height: calc(22 * var(--u));
   }
 
-  .microphone {
+  :host(:not(.embedded)) .microphone {
     right: calc(2.4 * var(--u));
     height: calc(8 * var(--u));
   }
 
-  .bezel {
+  :host(:not(.embedded)) .bezel {
     align-self: center;
   }
 
-  .nav {
+  :host(:not(.embedded)) .nav {
     grid-template-columns: 18fr 11fr 14fr 11fr 18fr;
     grid-template-rows: repeat(3, calc(10 * var(--u)));
   }
 
-  .dpad-ring {
+  :host(:not(.embedded)) .dpad-ring {
     width: calc(33 * var(--u));
   }
 
-  .key-select {
+  :host(:not(.embedded)) .key-select {
     height: calc(10 * var(--u));
   }
 
-  .keypad {
+  :host(:not(.embedded)) .keypad {
     grid-auto-rows: calc(8.5 * var(--u));
     gap: calc(2 * var(--u)) calc(2.5 * var(--u));
   }
 
-  .key-digit {
+  :host(:not(.embedded)) .key-digit {
     padding-top: calc(1.2 * var(--u));
   }
 
-  .digit {
+  :host(:not(.embedded)) .digit {
     font-size: calc(4.4 * var(--u));
   }
 
-  .letters {
+  :host(:not(.embedded)) .letters {
     font-size: calc(2.2 * var(--u));
   }
 }

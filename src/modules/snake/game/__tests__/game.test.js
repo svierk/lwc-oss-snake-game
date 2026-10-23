@@ -143,6 +143,67 @@ describe('snake-game', () => {
     expect(text(element, '.high-score')).toBe('HI 0002');
   });
 
+  describe('end of a round', () => {
+    // The moves of the high score test: two pieces of food, then the snake bites itself.
+    // 8 ticks at x1.0 (260ms), 5 at x1.1 (236ms) and 2 at x1.2 (217ms) - 3.7 seconds of play.
+    const playRound = (element) => {
+      element.press('up');
+      tick(6);
+      element.press('left');
+      tick(2);
+      element.press('down');
+      tick();
+      element.press('right');
+      tick(3);
+      element.press('up');
+      tick();
+      element.press('left');
+      tick();
+      element.press('down');
+      tick();
+    };
+
+    function createListenedGame() {
+      jest.spyOn(Math, 'random').mockReturnValue(0);
+      const element = createGame();
+      const handler = jest.fn();
+      element.addEventListener('gameover', handler);
+      return { element, handler };
+    }
+
+    it('reports score, level and the time played without pauses', async () => {
+      const { element, handler } = createListenedGame();
+      element.press('select');
+      element.press('select');
+      jest.advanceTimersByTime(60000);
+      element.press('select');
+      playRound(element);
+      await flush();
+      expect(text(element, '.message-title')).toBe('GAME OVER');
+      expect(handler).toHaveBeenCalledTimes(1);
+      expect(handler.mock.calls[0][0].detail).toEqual({ score: 2, level: 1, durationSeconds: 4 });
+    });
+
+    it('counts the time of the next round from zero', () => {
+      const { element, handler } = createListenedGame();
+      element.press('select');
+      playRound(element);
+      element.press('select');
+      playRound(element);
+      expect(handler).toHaveBeenCalledTimes(2);
+      expect(handler.mock.calls[1][0].detail.durationSeconds).toBe(4);
+    });
+
+    it('does not report a round that is left before it is over', () => {
+      const { element, handler } = createListenedGame();
+      element.press('select');
+      tick(3);
+      element.press('back');
+      element.press('back');
+      expect(handler).not.toHaveBeenCalled();
+    });
+  });
+
   it('loads the saved high score', async () => {
     localStorage.setItem(HIGH_SCORE_KEY, '25');
     const element = createGame();

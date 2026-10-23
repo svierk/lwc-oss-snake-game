@@ -1,8 +1,8 @@
 <template>
-  <main class="stage">
+  <main class={stageClass}>
     <h1 class="assistive-text">Snake</h1>
-    <snake-phone active-key={activeKey} onphonekey={handlePhoneKey}>
-      <snake-game lwc:ref="game"></snake-game>
+    <snake-phone class={phoneClass} active-key={activeKey} onphonekey={handlePhoneKey}>
+      <snake-game lwc:ref="game" ongameover={handleGameOver}></snake-game>
     </snake-phone>
   </main>
 </template>

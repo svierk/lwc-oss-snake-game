@@ -1,4 +1,4 @@
-import { COLS, ROWS, STATUS, createGame, placeFood, step, tickDelay, turn, withStatus } from 'snake/engine';
+import { COLS, ROWS, STATUS, createGame, levelFor, placeFood, step, tickDelay, turn, withStatus } from 'snake/engine';
 
 const playing = (overrides = {}) => ({ ...withStatus(createGame({ random: () => 0 }), STATUS.PLAYING), ...overrides });
 
@@ -146,6 +146,15 @@ describe('snake-engine', () => {
       expect(tickDelay(1)).toBe(260);
       expect(tickDelay(2)).toBe(130);
       expect(tickDelay(100)).toBe(70);
+    });
+  });
+
+  describe('levelFor', () => {
+    it('starts at level 1 and goes up every five pieces of food', () => {
+      expect(levelFor(0)).toBe(1);
+      expect(levelFor(4)).toBe(1);
+      expect(levelFor(5)).toBe(2);
+      expect(levelFor(12)).toBe(3);
     });
   });
 });

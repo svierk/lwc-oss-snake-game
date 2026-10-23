@@ -28,6 +28,7 @@ const MAX_QUEUED_TURNS = 2;
 const BASE_TICK_MS = 260;
 const MIN_TICK_MS = 70;
 const SPEED_STEP = 0.1;
+const FOOD_PER_LEVEL = 5;
 
 const samePosition = (a, b) => a.x === b.x && a.y === b.y;
 
@@ -122,6 +123,11 @@ export function step(state, random = Math.random) {
 
 export function withStatus(state, status) {
   return { ...state, status };
+}
+
+/** Snake has no stages; a level stands for five pieces of food, i.e. every half step of speed. */
+export function levelFor(score) {
+  return Math.floor(score / FOOD_PER_LEVEL) + 1;
 }
 
 /** Milliseconds between two ticks for the given speed factor. */
