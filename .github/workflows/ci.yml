@@ -69,5 +69,14 @@ jobs:
           lwc: true
           lwc-test-command: yarn run test:unit:coverage
 
+      # `lwr build` exits 0 even when a module cannot be resolved - it only
+      # logs an `[error]` line and the page then fails in the browser. The
+      # bash shell adds pipefail, so a real non-zero exit still fails too.
       - name: Build Production Bundle
-        run: yarn run build
+        shell: bash
+        run: |
+          yarn run build 2>&1 | tee build.log
+          if grep -q '\[error\]' build.log; then
+            echo "::error title=Build Production Bundle::lwr build logged errors, see the output above"
+            exit 1
+          fi
