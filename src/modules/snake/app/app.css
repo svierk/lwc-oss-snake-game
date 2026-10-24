@@ -10,9 +10,12 @@
   box-sizing: border-box;
 }
 
-/* The host sizes the frame to the reported height, so the stage must not depend on it. */
+/* The host sizes the frame to the reported height, so the stage must not depend on it. The phone
+   is cut off at the bottom edge of the frame: no padding there, and its shadow is clipped. */
 .stage.embedded {
   min-height: 0;
+  padding-bottom: 0;
+  overflow: hidden;
 }
 
 .assistive-text {

@@ -71,6 +71,24 @@
   user-select: none;
 }
 
+/*
+ * Embedded, the frame shows a cut-out of the phone: the screen and the
+ * navigation keys at full size. The body runs on past the bottom edge of the
+ * frame, so it ends flat there; the number keypad and the microphone stay
+ * outside the cut-out (the navigation keys and the keyboard still steer).
+ */
+:host(.embedded) .phone {
+  grid-template-areas: 'earpiece' 'bezel' 'nav';
+  padding-bottom: calc(5 * var(--u));
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+:host(.embedded) .keypad,
+:host(.embedded) .microphone {
+  display: none;
+}
+
 /* Earpiece and microphone slots */
 
 .earpiece,

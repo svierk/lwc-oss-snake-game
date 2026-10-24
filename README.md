@@ -129,7 +129,9 @@ When a round ends (game over or won) the game sends a `gameover` event to the ho
 pauses. The game has no Salesforce session of its own - saving the score is up to the host.
 
 Embedded, the phone is sized by the width of the frame and the landscape layout is not used: the host sets the height
-of the frame from the reported height of the game, so a size that follows the frame's height would never grow.
+of the frame from the reported height of the game, so a size that follows the frame's height would never grow. The
+frame shows a cut-out of the phone at full size - the screen and the navigation keys - so the game fits on a Lightning
+page without scrolling; the number keypad stays below the edge, the navigation keys and the keyboard steer.
 
 To embed the game in your own org:
 
