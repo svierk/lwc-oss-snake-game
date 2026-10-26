@@ -48,7 +48,7 @@ jobs:
       # project, not an SFDX one - so only the Prettier and ESLint checks run,
       # through the scripts in package.json.
       - name: Code Review
-        uses: svierk/sfdx-code-review@v1.1.0
+        uses: svierk/sfdx-code-review@v1.1.1
         with:
           code-analyzer: false
           prettier: true
