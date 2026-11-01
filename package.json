@@ -30,23 +30,23 @@
     "test:unit:debug": "jest --debug"
   },
   "dependencies": {
-    "@lwc/compiler": "9.5.1",
-    "@lwc/module-resolver": "9.5.1",
-    "lwc": "9.5.1",
-    "lwr": "0.24.3"
+    "@lwc/compiler": "9.5.2",
+    "@lwc/module-resolver": "9.5.2",
+    "lwc": "9.5.2",
+    "lwr": "0.24.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.7",
-    "@babel/eslint-parser": "^7.29.9",
-    "@lwc/engine-dom": "9.5.1",
-    "@lwc/engine-server": "9.5.1",
+    "@babel/core": "^8.0.7",
+    "@babel/eslint-parser": "^8.0.7",
+    "@lwc/engine-dom": "9.5.2",
+    "@lwc/engine-server": "9.5.2",
     "@lwc/eslint-plugin-lwc": "^3.5.0",
     "@lwc/jest-preset": "^19.6.1",
-    "@lwc/synthetic-shadow": "9.5.1",
-    "@sa11y/jest": "8.2.0",
+    "@lwc/synthetic-shadow": "9.5.2",
+    "@sa11y/jest": "8.2.1",
     "@salesforce/eslint-config-lwc": "^4.1.2",
     "@salesforce/eslint-plugin-lightning": "^2.0.0",
-    "eslint": "^9.39.5",
+    "eslint": "^10.13.0",
     "eslint-plugin-compat": "^7.0.2",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jest": "^29.17.0",
@@ -56,7 +56,7 @@
     "jest-environment-jsdom": "^30.5.2",
     "lint-staged": "^17.6.0",
     "prettier": "^3.9.10",
-    "typescript": "~6.0.3"
+    "typescript": "~7.0.2"
   },
   "engines": {
     "node": "26.x.x"
