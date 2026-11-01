@@ -59,10 +59,10 @@
     "typescript": "~6.0.3"
   },
   "engines": {
-    "node": "24.x.x"
+    "node": "26.x.x"
   },
   "volta": {
-    "node": "24.x.x"
+    "node": "26.x.x"
   },
   "lint-staged": {
     "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
