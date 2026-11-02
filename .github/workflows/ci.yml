@@ -63,7 +63,7 @@ jobs:
       # need an org and are switched off; the LWC tests write the lcov report
       # the action reads the coverage for the job summary from.
       - name: LWC Unit Tests
-        uses: svierk/sfdx-run-tests@v1.2.0
+        uses: svierk/sfdx-run-tests@v1.3.0
         with:
           apex: false
           lwc: true
